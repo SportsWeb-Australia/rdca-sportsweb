@@ -53,7 +53,7 @@ img{display:block;max-width:100%}
 .nav-links::-webkit-scrollbar{display:none}
 .nav-link{padding:9px 13px;font-size:13px;font-weight:500;color:rgba(255,255,255,.65);border-radius:7px;cursor:pointer;white-space:nowrap;transition:all .15s;text-decoration:none;display:flex;align-items:center;gap:4px}
 .nav-link:hover{background:rgba(255,255,255,.1);color:#fff}
-.nav-link.active{background:rgba(204,34,34,.25);color:#fff}
+.nav-link.active{background:#cc2222;color:#fff}
 .nav-actions{display:flex;gap:8px;align-items:center;flex-shrink:0;margin-left:8px}
 .nav-icon-btn{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.07);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:all .15s}
 .nav-icon-btn:hover{background:rgba(255,255,255,.14);color:#fff}
@@ -123,16 +123,16 @@ img{display:block;max-width:100%}
 .app-icon i{font-size:24px;color:rgba(255,255,255,.6);transition:color .15s}
 .app-lbl{font-size:11px;font-weight:600;color:rgba(255,255,255,.45);text-align:center;transition:color .15s}
 /* SPONSOR CAROUSEL - FULL WIDTH */
-.sc-wrap{background:#0a1528;padding:22px 0;border-top:3px solid var(--red)}
-.sc-inner{display:flex;align-items:center;gap:0;overflow:hidden}
+.sc-wrap{background:#0a1528;padding:22px 0;border-top:3px solid var(--red);overflow:hidden;width:100%}
+.sc-inner{display:flex;align-items:center;gap:0;overflow:hidden;width:100%}
 .sc-label-block{padding:0 28px;border-right:1px solid rgba(255,255,255,.12);flex-shrink:0}
 .sc-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
 .sc-sublabel{font-size:10px;color:rgba(255,255,255,.25);white-space:nowrap}
-.sc-scroll{flex:1;overflow:hidden;min-width:0}
-.sc-track{display:flex;gap:14px;padding:0 20px;animation:scmove 35s linear infinite;width:max-content}
+.sc-scroll{flex:1;overflow:hidden;min-width:0;white-space:nowrap;max-width:calc(100vw - 160px)}
+.sc-track{display:flex;flex-direction:row;flex-wrap:nowrap;gap:14px;padding:0 20px;animation:scmove 35s linear infinite;width:max-content}
 .sc-track:hover{animation-play-state:paused}
 @keyframes scmove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.sc-item{height:60px;min-width:180px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0;cursor:pointer;transition:all .18s;text-decoration:none}
+.sc-item{height:60px;min-width:180px;flex:0 0 auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0;cursor:pointer;transition:all .18s;text-decoration:none}
 .sc-item:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);transform:translateY(-1px)}
 .sc-logo{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:400;color:#fff;flex-shrink:0;letter-spacing:.5px}
 .sc-logo img{width:100%;height:100%;object-fit:contain;border-radius:9px}
@@ -189,12 +189,12 @@ img{display:block;max-width:100%}
 .res-score{font-family:'Bebas Neue',sans-serif;font-size:18px}
 .res-outcome{font-size:11px;font-weight:700;color:#16a34a}
 /* PERFORMERS */
-.perf-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.perf-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .perf-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
 .perf-row:last-child{border-bottom:none}
 .perf-rank{font-size:11px;color:var(--muted);font-weight:700;width:16px;flex-shrink:0}
 .perf-av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0}
-.perf-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.perf-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:120px}
 .perf-club{font-size:10px;color:var(--muted)}
 .perf-val{font-family:'Bebas Neue',sans-serif;font-size:20px;line-height:1;text-align:right}
 .perf-avg{font-size:10px;color:var(--muted);text-align:right}
@@ -335,6 +335,9 @@ img{display:block;max-width:100%}
   .hero-stats{grid-template-columns:repeat(2,1fr)}
   .col-side{display:flex;flex-direction:column}
   .col-side .side-sp-ad{display:none}
+
+  #pane-ladder,#pane-fixtures,#pane-results{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .ladder-tbl{min-width:500px}
 }
 @media(max-width:480px){
   .hero-hed{font-size:40px}
@@ -344,6 +347,7 @@ img{display:block;max-width:100%}
   .footer-top{grid-template-columns:1fr}
   .app-grid{grid-template-columns:repeat(3,1fr)}
 }
+
 </style>
 </head>
 <body>
@@ -546,7 +550,7 @@ img{display:block;max-width:100%}
         </div>
       </div>
       <div class="news-grid"><div class="news-card">
-  <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1565787154274-c8d076ad34e7?w=600&q=78&auto=format&fit=crop')"></div>
+  <div class="news-thumb" style="background-image:url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=78&auto=format&fit=crop')"></div>
   <div class="news-body">
     <div style="margin-bottom:6px;display:flex;align-items:center;justify-content:space-between">
       <span class="badge badge-green">Announcement</span>
@@ -591,14 +595,94 @@ img{display:block;max-width:100%}
         <div class="comp-tab" onclick="switchTab('fixtures',this)"><i class="ti ti-calendar-event" style="font-size:13px;margin-right:4px"></i>Fixtures</div>
         <div class="comp-tab" onclick="switchTab('results',this)"><i class="ti ti-chart-bar" style="font-size:13px;margin-right:4px"></i>Results</div>
       </div>
-      <div id="pane-ladder"><table class="ladder-tbl">
+      <div id="pane-ladder" style="overflow-x:auto;-webkit-overflow-scrolling:touch"><table class="ladder-tbl">
 <thead><tr>
-  <th class="left" style="width:28px">#</th>
+  <th class="left" style="width:32px;min-width:32px">#</th>
   <th class="left" colspan="2">Club</th>
   <th>P</th><th>W</th><th>L</th><th>NR</th><th>Form</th><th>Pts</th>
 </tr></thead>
 <tbody><tr class="promo">
   <td class="left"><div class="ldr-pos top">1</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761778/CLUB_LOGOS-37_a3g10x.png" style="width:26px;height:26px;object-fit:contain" alt="Ringwood CC"></div></td>
+  <td class="left"><span style="font-weight:700;font-size:13px">Ringwood CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">11</td>
+  <td style="color:var(--muted)">2</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip W">W</div><div class="form-pip W">W</div><div class="form-pip W">W</div><div class="form-pip L">L</div><div class="form-pip W">W</div></div></td>
+  <td><span class="pts-bold" style="color:var(--red)">46</span></td>
+</tr><tr class="promo">
+  <td class="left"><div class="ldr-pos top">2</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761777/CLUB_LOGOS-34_yfxf3j.png" style="width:26px;height:26px;object-fit:contain" alt="Croydon CC"></div></td>
+  <td class="left"><span style="font-weight:700;font-size:13px">Croydon CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">10</td>
+  <td style="color:var(--muted)">3</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip W">W</div><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip W">W</div><div class="form-pip L">L</div></div></td>
+  <td><span class="pts-bold" style="color:var(--red)">42</span></td>
+</tr><tr class="">
+  <td class="left"><div class="ldr-pos norm">3</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761777/CLUB_LOGOS-35_qspvnv.png" style="width:26px;height:26px;object-fit:contain" alt="Heathmont CC"></div></td>
+  <td class="left"><span style="font-weight:500;font-size:13px">Heathmont CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">9</td>
+  <td style="color:var(--muted)">4</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip W">W</div><div class="form-pip W">W</div><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip W">W</div></div></td>
+  <td><span class="pts-bold" style="color:var(--text)">38</span></td>
+</tr><tr class="">
+  <td class="left"><div class="ldr-pos norm">4</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-33_acflud.png" style="width:26px;height:26px;object-fit:contain" alt="Wonga Park CC"></div></td>
+  <td class="left"><span style="font-weight:500;font-size:13px">Wonga Park CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">8</td>
+  <td style="color:var(--muted)">5</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip W">W</div><div class="form-pip W">W</div><div class="form-pip L">L</div></div></td>
+  <td><span class="pts-bold" style="color:var(--text)">34</span></td>
+</tr><tr class="">
+  <td class="left"><div class="ldr-pos norm">5</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-32_vlxq2w.png" style="width:26px;height:26px;object-fit:contain" alt="Kilsyth CC"></div></td>
+  <td class="left"><span style="font-weight:500;font-size:13px">Kilsyth CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">7</td>
+  <td style="color:var(--muted)">6</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip W">W</div><div class="form-pip L">L</div><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip W">W</div></div></td>
+  <td><span class="pts-bold" style="color:var(--text)">30</span></td>
+</tr><tr class="">
+  <td class="left"><div class="ldr-pos norm">6</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-31_lmfnie.png" style="width:26px;height:26px;object-fit:contain" alt="Lilydale CC"></div></td>
+  <td class="left"><span style="font-weight:500;font-size:13px">Lilydale CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">5</td>
+  <td style="color:var(--muted)">8</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip L">L</div><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip L">L</div><div class="form-pip W">W</div></div></td>
+  <td><span class="pts-bold" style="color:var(--text)">22</span></td>
+</tr><tr class="">
+  <td class="left"><div class="ldr-pos norm">7</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761775/CLUB_LOGOS-24_xbikvg.png" style="width:26px;height:26px;object-fit:contain" alt="Warranwood CC"></div></td>
+  <td class="left"><span style="font-weight:500;font-size:13px">Warranwood CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">4</td>
+  <td style="color:var(--muted)">9</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip L">L</div><div class="form-pip L">L</div><div class="form-pip L">L</div></div></td>
+  <td><span class="pts-bold" style="color:var(--text)">18</span></td>
+</tr><tr class="">
+  <td class="left"><div class="ldr-pos norm">8</div></td>
+  <td><div style="width:30px;height:30px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761775/CLUB_LOGOS-25_h01djb.png" style="width:26px;height:26px;object-fit:contain" alt="Montrose CC"></div></td>
+  <td class="left"><span style="font-weight:500;font-size:13px">Montrose CC</span></td>
+  <td style="color:var(--muted)">14</td>
+  <td style="font-weight:600">2</td>
+  <td style="color:var(--muted)">11</td>
+  <td style="color:var(--muted)">1</td>
+  <td><div style="display:flex;gap:3px;justify-content:center"><div class="form-pip L">L</div><div class="form-pip L">L</div><div class="form-pip L">L</div><div class="form-pip W">W</div><div class="form-pip L">L</div></div></td>
+  <td><span class="pts-bold" style="color:var(--text)">10</span></td>
+</tr></tbody>
+</table></div></td>
   <td><div class="club-dot" style="background:#cc2222">RCC</div></td>
   <td class="left"><span style="font-weight:700;font-size:13px">Ringwood CC</span></td>
   <td style="color:var(--muted)">14</td>
@@ -1058,7 +1142,7 @@ img{display:block;max-width:100%}
         <a class="view-all" href="#">All Events <i class="ti ti-arrow-right"></i></a>
       </div>
       <div class="events-grid"><div class="event-card">
-  <div class="event-banner" style="background-image:url('https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=600&q=78&auto=format&fit=crop')">
+  <div class="event-banner" style="background-image:url('https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761368/480425379_9162514167130775_2819874434032542497_n_o6gikt.jpg')">
     <div class="event-banner-content">
       <div class="event-date-chip">
         <div class="event-date-num">28</div>
@@ -1072,7 +1156,7 @@ img{display:block;max-width:100%}
     <div class="event-meta"><i class="ti ti-map-pin" style="font-size:10px"></i>Ringwood Function Centre</div>
   </div>
 </div><div class="event-card">
-  <div class="event-banner" style="background-image:url('https://images.unsplash.com/photo-1565787154274-c8d076ad34e7?w=600&q=78&auto=format&fit=crop')">
+  <div class="event-banner" style="background-image:url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=78&auto=format&fit=crop')">
     <div class="event-banner-content">
       <div class="event-date-chip">
         <div class="event-date-num">31</div>
@@ -1109,73 +1193,74 @@ img{display:block;max-width:100%}
         <a class="view-all" href="#">All 28 Clubs <i class="ti ti-arrow-right"></i></a>
       </div>
       <div class="clubs-grid"><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#cc2222">RIN</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761778/CLUB_LOGOS-37_a3g10x.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Ringwood CC"></div>
     <div class="club-card-name">Ringwood CC</div>
     <div class="club-card-div">Premier Division</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1593766788306-28561086c716?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1593766788306-28561086c716?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#0d1f3c">CRO</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761777/CLUB_LOGOS-34_yfxf3j.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Croydon CC"></div>
     <div class="club-card-name">Croydon CC</div>
     <div class="club-card-div">Premier Division</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#1e6b3d">HEA</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761777/CLUB_LOGOS-35_qspvnv.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Heathmont CC"></div>
     <div class="club-card-name">Heathmont CC</div>
     <div class="club-card-div">Premier Division</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1595435934249-5df7ed86e1c0?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1593766788306-28561086c716?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#1e3d6b">WON</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-33_acflud.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Wonga Park CC"></div>
     <div class="club-card-name">Wonga Park CC</div>
     <div class="club-card-div">Premier Division</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1565787154274-c8d076ad34e7?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#7c3d8b">KIL</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-32_vlxq2w.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Kilsyth CC"></div>
     <div class="club-card-name">Kilsyth CC</div>
     <div class="club-card-div">Division 1</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1599982946086-eb42d9e14eb8?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1599982946086-eb42d9e14eb8?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#c47a15">LIL</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-31_lmfnie.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Lilydale CC"></div>
     <div class="club-card-name">Lilydale CC</div>
     <div class="club-card-div">Division 1</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1595210382051-4d2c31fcc2f4?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1595210382051-4d2c31fcc2f4?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#1565a8">WAR</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761775/CLUB_LOGOS-24_xbikvg.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Warranwood CC"></div>
     <div class="club-card-name">Warranwood CC</div>
     <div class="club-card-div">Division 1</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div><div class="club-card">
-  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=400&q=72&auto=format&fit=crop')"></div>
+  <div class="club-card-banner" style="background-image:url('https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=400&q=70&auto=format&fit=crop')"></div>
   <div class="club-card-body">
-    <div class="club-card-logo" style="background:#5a6880">MON</div>
+    <div class="club-card-logo" style="background:#fff;border:2px solid var(--border2)"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761775/CLUB_LOGOS-25_h01djb.png" style="width:100%;height:100%;object-fit:contain;border-radius:50%" alt="Montrose CC"></div>
     <div class="club-card-name">Montrose CC</div>
     <div class="club-card-div">Division 1</div>
     <a href="#" class="btn btn-navy btn-sm" style="font-size:11px;padding:4px 12px">Club Profile</a>
   </div>
 </div></div>
+
     </div>
 
-    <!-- NEWSLETTER -->
+    <!-- NEWSLETTER --><!-- NEWSLETTER -->
     <div class="newsletter">
       <div class="nl-photo" style="background-image:url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=900&q=75&auto=format&fit=crop')"></div>
       <div class="nl-inner">
@@ -1292,49 +1377,49 @@ img{display:block;max-width:100%}
       <div class="eyebrow">Member Clubs</div>
       <div class="side-hed">Club Directory</div>
       <div class="club-row">
-  <div class="club-dot-sm" style="background:#cc2222">RI</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761778/CLUB_LOGOS-37_a3g10x.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Ringwood CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Ringwood CC</div>
     <div style="font-size:10px;color:var(--muted)">Premier Division</div>
   </div>
   <i class="ti ti-chevron-right" style="font-size:14px;color:var(--muted)"></i>
 </div><div class="club-row">
-  <div class="club-dot-sm" style="background:#0d1f3c">CR</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761777/CLUB_LOGOS-34_yfxf3j.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Croydon CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Croydon CC</div>
     <div style="font-size:10px;color:var(--muted)">Premier Division</div>
   </div>
   <i class="ti ti-chevron-right" style="font-size:14px;color:var(--muted)"></i>
 </div><div class="club-row">
-  <div class="club-dot-sm" style="background:#1e6b3d">HE</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761777/CLUB_LOGOS-35_qspvnv.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Heathmont CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Heathmont CC</div>
     <div style="font-size:10px;color:var(--muted)">Premier Division</div>
   </div>
   <i class="ti ti-chevron-right" style="font-size:14px;color:var(--muted)"></i>
 </div><div class="club-row">
-  <div class="club-dot-sm" style="background:#1e3d6b">WO</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-33_acflud.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Wonga Park CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Wonga Park CC</div>
     <div style="font-size:10px;color:var(--muted)">Premier Division</div>
   </div>
   <i class="ti ti-chevron-right" style="font-size:14px;color:var(--muted)"></i>
 </div><div class="club-row">
-  <div class="club-dot-sm" style="background:#7c3d8b">KI</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-32_vlxq2w.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Kilsyth CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Kilsyth CC</div>
     <div style="font-size:10px;color:var(--muted)">Division 1</div>
   </div>
   <i class="ti ti-chevron-right" style="font-size:14px;color:var(--muted)"></i>
 </div><div class="club-row">
-  <div class="club-dot-sm" style="background:#c47a15">LI</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761776/CLUB_LOGOS-31_lmfnie.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Lilydale CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Lilydale CC</div>
     <div style="font-size:10px;color:var(--muted)">Division 1</div>
   </div>
   <i class="ti ti-chevron-right" style="font-size:14px;color:var(--muted)"></i>
 </div><div class="club-row">
-  <div class="club-dot-sm" style="background:#1565a8">WA</div>
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761775/CLUB_LOGOS-24_xbikvg.png" style="width:32px;height:32px;object-fit:contain;border-radius:8px" alt="Warranwood CC">
   <div style="flex:1">
     <div style="font-size:12px;font-weight:600">Warranwood CC</div>
     <div style="font-size:10px;color:var(--muted)">Division 1</div>
@@ -1367,45 +1452,76 @@ img{display:block;max-width:100%}
     </div>
 
     <!-- SPONSOR ADS (desktop/tablet only via CSS) -->
-    <a href="https://jimmyz.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a1f0a,#1a4a1a)">
+<a href="https://seda.vic.edu.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#081828,#0d2a4a)">
   <div class="side-sp-body">
-    <div class="side-sp-pretag">Official Partner</div>
-    <div class="side-sp-row">
-      <div class="side-sp-icon" style="background:#2d7a2d">JZ</div>
-      <div class="side-sp-name">Jimmy'Z Cafe</div>
-    </div>
-    <div class="side-sp-desc">Good food &amp; great coffee in Ringwood. The RDCA's official dining partner.</div>
+    <div class="side-sp-pretag">Education Partner</div>
+    <div style="margin-bottom:8px"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/seda-vic-logo_cxgyvs.svg" style="height:36px;max-width:140px;object-fit:contain;filter:brightness(0) invert(1)" alt="SEDA College"></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">SEDA College</div>
+    <div class="side-sp-desc">Sport & Education Development Australia — combining VCE studies with elite sporting pathways for the next generation of cricketers.</div>
+    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Learn More</div>
+  </div>
+</a>
+<a href="#" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a0a1f,#1a1a3f)">
+  <div class="side-sp-body">
+    <div class="side-sp-pretag">Proud Sponsor</div>
+    <div style="margin-bottom:8px"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760761/logo-header-white_loxun3.webp" style="height:36px;max-width:140px;object-fit:contain;filter:brightness(0) invert(1)" alt="Official Partner"></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">Official Partner</div>
+    <div class="side-sp-desc">A proud supporter of cricket in Melbourne's east. Partnering with RDCA to develop the game at all levels of the community.</div>
     <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Visit Website</div>
   </div>
-</a><a href="https://mchenrypartners.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a0a2a,#1a1a4a)">
+</a>
+<a href="https://altegra.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a1f0a,#1a3a1a)">
   <div class="side-sp-body">
-    <div class="side-sp-pretag">Platinum Sponsor</div>
-    <div class="side-sp-row">
-      <div class="side-sp-icon" style="background:#3a3a9a">MH</div>
-      <div class="side-sp-name">McHenry Partners</div>
-    </div>
-    <div class="side-sp-desc">Accountants &amp; Business Advisors. Supporting your financial goals — business and personal.</div>
-    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Book a Consultation</div>
+    <div class="side-sp-pretag">Official Supplier</div>
+    <div style="margin-bottom:8px"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/Altegra.com_.au-logo_350x100_tqmti7.png" style="height:36px;max-width:140px;object-fit:contain;filter:brightness(0) invert(1)" alt="Altegra"></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">Altegra</div>
+    <div class="side-sp-desc">Premium gazebos, marquees and shade structures. The official outdoor equipment supplier to RDCA clubs — built for Australian conditions.</div>
+    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Shop Now</div>
   </div>
-</a><a href="https://groundhouse.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#1a0a0a,#4a1a1a)">
+</a>
+<a href="#" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#1a0a1a,#2a1a2a)">
+  <div class="side-sp-body">
+    <div class="side-sp-pretag">Photography Partner</div>
+    <div style="margin-bottom:8px"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/FOV_p2scu1.avif" style="height:36px;max-width:140px;object-fit:contain;filter:brightness(0) invert(1)" alt="Field of View Photography"></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">Field of View Photography</div>
+    <div class="side-sp-desc">Capturing the moments that matter. Field of View Photography is the RDCA's official photographer — covering matches, events and finals all season.</div>
+    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> View Portfolio</div>
+  </div>
+</a>
+<a href="#" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#1f0a0a,#3a1a1a)">
+  <div class="side-sp-body">
+    <div class="side-sp-pretag">Proud Sponsor</div>
+    <div style="margin-bottom:8px"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761085/33509187294ea3ba8496005938ed614c_pbz8sf.jpg" style="height:36px;max-width:140px;object-fit:contain;filter:brightness(0) invert(1)" alt="Club Sponsor"></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">Club Sponsor</div>
+    <div class="side-sp-desc">A valued supporter of RDCA cricket. Proudly backing clubs, players and competitions across Melbourne's eastern suburbs.</div>
+    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Visit Website</div>
+  </div>
+</a>
+<a href="https://groundhouse.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#1a0505,#4a1010)">
   <div class="side-sp-body">
     <div class="side-sp-pretag">Entertainment Partner</div>
-    <div class="side-sp-row">
-      <div class="side-sp-icon" style="background:#8a2a2a">GH</div>
-      <div class="side-sp-name">GroundHouse Entertainment</div>
-    </div>
-    <div class="side-sp-desc">Live events &amp; entertainment for the Ringwood region. Your local entertainment destination.</div>
+    <div style="margin-bottom:8px"><div style="width:44px;height:44px;border-radius:10px;background:#8a2a2a;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:15px;color:#fff;flex-shrink:0">GH</div></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">GroundHouse Entertainment</div>
+    <div class="side-sp-desc">Live events and entertainment across the Ringwood region. Your local destination for unforgettable experiences.</div>
     <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Visit Website</div>
   </div>
-</a><a href="https://s-trend.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a1a1a,#1a3a2a)">
+</a>
+<a href="https://mchenrypartners.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a0a2a,#1a1a4a)">
   <div class="side-sp-body">
-    <div class="side-sp-pretag">Official Apparel</div>
-    <div class="side-sp-row">
-      <div class="side-sp-icon" style="background:#2a7a5a">ST</div>
-      <div class="side-sp-name">S-Trend Sportswear</div>
-    </div>
-    <div class="side-sp-desc">Cricket apparel &amp; sportswear. Official uniform supplier to RDCA member clubs.</div>
-    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Shop Now</div>
+    <div class="side-sp-pretag">Platinum Sponsor</div>
+    <div style="margin-bottom:8px"><div style="width:44px;height:44px;border-radius:10px;background:#3a3a9a;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:15px;color:#fff;flex-shrink:0">MH</div></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">McHenry Partners</div>
+    <div class="side-sp-desc">Accountants & Business Advisors. Supporting your financial goals — business and personal finances, tax advice and planning.</div>
+    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Book a Consultation</div>
+  </div>
+</a>
+<a href="https://jimmyz.com.au" target="_blank" rel="noopener" class="side-sp-ad" style="background:linear-gradient(135deg,#0a1f0a,#1a4a1a)">
+  <div class="side-sp-body">
+    <div class="side-sp-pretag">Food & Dining Partner</div>
+    <div style="margin-bottom:8px"><div style="width:44px;height:44px;border-radius:10px;background:#2d7a2d;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:15px;color:#fff;flex-shrink:0">JZ</div></div>
+    <div class="side-sp-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:6px">Jimmy'Z Cafe</div>
+    <div class="side-sp-desc">Good food and great coffee in Ringwood. The RDCA's official dining partner — perfect for post-match celebrations.</div>
+    <div class="side-sp-cta"><i class="ti ti-external-link" style="font-size:11px"></i> Find Us</div>
   </div>
 </a>
 
@@ -1421,6 +1537,37 @@ img{display:block;max-width:100%}
       <div class="sw1-feat" style="margin-bottom:14px"><i class="ti ti-check"></i> Sponsorship management</div>
       <a class="btn btn-red" style="width:100%;justify-content:center" href="#">Learn About SportsWeb One</a>
     </div>
+<!-- CONTACT CARD -->
+<div class="card" style="padding:16px;background:linear-gradient(135deg,var(--navy),var(--navy3))">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+    <i class="ti ti-phone" style="color:var(--red);font-size:18px"></i>
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:17px;color:#fff;letter-spacing:.3px">Contact RDCA</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <a href="tel:0398700000" style="display:flex;align-items:center;gap:9px;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none">
+      <div style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-phone" style="font-size:14px;color:var(--red)"></i></div>
+      (03) 9870 0000
+    </a>
+    <a href="mailto:admin@rdca.com.au" style="display:flex;align-items:center;gap:9px;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none">
+      <div style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-mail" style="font-size:14px;color:var(--red)"></i></div>
+      admin@rdca.com.au
+    </a>
+    <a href="#" style="display:flex;align-items:center;gap:9px;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none">
+      <div style="width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0"><i class="ti ti-map-pin" style="font-size:14px;color:var(--red)"></i></div>
+      Ringwood, Victoria
+    </a>
+  </div>
+  <div style="margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)">
+    <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:8px;font-weight:600;letter-spacing:.5px;text-transform:uppercase">Follow Us</div>
+    <div style="display:flex;gap:8px">
+      <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:15px;transition:all .15s" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><i class="ti ti-brand-facebook"></i></a>
+      <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:15px;transition:all .15s" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><i class="ti ti-brand-instagram"></i></a>
+      <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:15px;transition:all .15s" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><i class="ti ti-brand-twitter"></i></a>
+      <a href="#" style="width:32px;height:32px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);font-size:15px;transition:all .15s" onmouseover="this.style.background='var(--red)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><i class="ti ti-brand-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
 
   </div><!-- /col-side -->
 </div><!-- /main-layout -->
@@ -1433,8 +1580,163 @@ img{display:block;max-width:100%}
       <span class="sc-sublabel">Proud partners of RDCA</span>
     </div>
     <div class="sc-scroll">
-      <div class="sc-track"><a href="https://jimmyz.com.au" target="_blank" rel="noopener" class="sc-item">
+      <div class="sc-track"><a href="https://seda.vic.edu.au" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/seda-vic-logo_cxgyvs.svg" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="SEDA College">
+  <div>
+    <div class="sc-name">SEDA College</div>
+    <div class="sc-tag">Education Partner</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760761/logo-header-white_loxun3.webp" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="Official Partner">
+  <div>
+    <div class="sc-name">Official Partner</div>
+    <div class="sc-tag">Proud Sponsor</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761085/33509187294ea3ba8496005938ed614c_pbz8sf.jpg" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="Club Sponsor">
+  <div>
+    <div class="sc-name">Club Sponsor</div>
+    <div class="sc-tag">Proud Sponsor</div>
+  </div>
+</a><a href="https://altegra.com.au" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/Altegra.com_.au-logo_350x100_tqmti7.png" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="Altegra">
+  <div>
+    <div class="sc-name">Altegra</div>
+    <div class="sc-tag">Official Supplier</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/FOV_p2scu1.avif" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="FOV">
+  <div>
+    <div class="sc-name">FOV</div>
+    <div class="sc-tag">Official Partner</div>
+  </div>
+</a><a href="https://jimmyz.com.au" target="_blank" rel="noopener" class="sc-item">
   <div class="sc-logo" style="background:#2d7a2d">JZ</div>
+  <div>
+    <div class="sc-name">Jimmy'Z Cafe</div>
+    <div class="sc-tag">Food & Dining</div>
+  </div>
+</a><a href="https://mchenrypartners.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#3a3a9a">MH</div>
+  <div>
+    <div class="sc-name">McHenry Partners</div>
+    <div class="sc-tag">Accountants</div>
+  </div>
+</a><a href="https://groundhouse.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#8a2a2a">GH</div>
+  <div>
+    <div class="sc-name">GroundHouse Entertainment</div>
+    <div class="sc-tag">Entertainment</div>
+  </div>
+</a><a href="https://s-trend.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#2a7a5a">ST</div>
+  <div>
+    <div class="sc-name">S-Trend Sportswear</div>
+    <div class="sc-tag">Official Apparel</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#1e3d6b">RA</div>
+  <div>
+    <div class="sc-name">Ringwood Auto Group</div>
+    <div class="sc-tag">Automotive</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#1e6b3d">EH</div>
+  <div>
+    <div class="sc-name">Eastern Health</div>
+    <div class="sc-tag">Healthcare</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#1565a8">YV</div>
+  <div>
+    <div class="sc-name">Yarra Valley Water</div>
+    <div class="sc-tag">Infrastructure</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#cc2222">CB</div>
+  <div>
+    <div class="sc-name">Commonwealth Bank</div>
+    <div class="sc-tag">Banking Partner</div>
+  </div>
+</a><a href="https://seda.vic.edu.au" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/seda-vic-logo_cxgyvs.svg" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="SEDA College">
+  <div>
+    <div class="sc-name">SEDA College</div>
+    <div class="sc-tag">Education Partner</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760761/logo-header-white_loxun3.webp" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="Official Partner">
+  <div>
+    <div class="sc-name">Official Partner</div>
+    <div class="sc-tag">Proud Sponsor</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761085/33509187294ea3ba8496005938ed614c_pbz8sf.jpg" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="Club Sponsor">
+  <div>
+    <div class="sc-name">Club Sponsor</div>
+    <div class="sc-tag">Proud Sponsor</div>
+  </div>
+</a><a href="https://altegra.com.au" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/Altegra.com_.au-logo_350x100_tqmti7.png" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="Altegra">
+  <div>
+    <div class="sc-name">Altegra</div>
+    <div class="sc-tag">Official Supplier</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780760760/FOV_p2scu1.avif" style="height:32px;max-width:80px;object-fit:contain;filter:brightness(0) invert(1)" alt="FOV">
+  <div>
+    <div class="sc-name">FOV</div>
+    <div class="sc-tag">Official Partner</div>
+  </div>
+</a><a href="https://jimmyz.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#2d7a2d">JZ</div>
+  <div>
+    <div class="sc-name">Jimmy'Z Cafe</div>
+    <div class="sc-tag">Food & Dining</div>
+  </div>
+</a><a href="https://mchenrypartners.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#3a3a9a">MH</div>
+  <div>
+    <div class="sc-name">McHenry Partners</div>
+    <div class="sc-tag">Accountants</div>
+  </div>
+</a><a href="https://groundhouse.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#8a2a2a">GH</div>
+  <div>
+    <div class="sc-name">GroundHouse Entertainment</div>
+    <div class="sc-tag">Entertainment</div>
+  </div>
+</a><a href="https://s-trend.com.au" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#2a7a5a">ST</div>
+  <div>
+    <div class="sc-name">S-Trend Sportswear</div>
+    <div class="sc-tag">Official Apparel</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#1e3d6b">RA</div>
+  <div>
+    <div class="sc-name">Ringwood Auto Group</div>
+    <div class="sc-tag">Automotive</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#1e6b3d">EH</div>
+  <div>
+    <div class="sc-name">Eastern Health</div>
+    <div class="sc-tag">Healthcare</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#1565a8">YV</div>
+  <div>
+    <div class="sc-name">Yarra Valley Water</div>
+    <div class="sc-tag">Infrastructure</div>
+  </div>
+</a><a href="#" target="_blank" rel="noopener" class="sc-item">
+  <div class="sc-logo" style="background:#cc2222">CB</div>
+  <div>
+    <div class="sc-name">Commonwealth Bank</div>
+    <div class="sc-tag">Banking Partner</div>
+  </div>
+</a></div>
   <div>
     <div class="sc-name">Jimmy'Z Cafe</div>
     <div class="sc-tag">Food &amp; Dining</div>
