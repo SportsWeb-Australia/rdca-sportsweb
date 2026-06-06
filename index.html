@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- RDCA v7 - table fix -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -129,10 +130,10 @@ img{display:block;max-width:100%}
 .sc-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:2px}
 .sc-sublabel{font-size:10px;color:rgba(255,255,255,.25);white-space:nowrap}
 .sc-scroll{flex:1;overflow:hidden;min-width:0;width:0}
-.sc-track{display:flex;flex-direction:row;flex-wrap:nowrap;gap:14px;padding:0 20px;animation:scmove 35s linear infinite;width:max-content}
+.sc-track{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;gap:14px;padding:0 20px;animation:scmove 35s linear infinite;width:max-content}
 .sc-track:hover{animation-play-state:paused}
 @keyframes scmove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.sc-item{height:60px;min-width:180px;flex:0 0 auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0;cursor:pointer;transition:all .18s;text-decoration:none}
+.sc-item{height:60px;min-width:180px;flex:0 0 auto!important;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;padding:0 16px;gap:12px;flex-shrink:0;cursor:pointer;transition:all .18s;text-decoration:none}
 .sc-item:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25);transform:translateY(-1px)}
 .sc-logo{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:14px;font-weight:400;color:#fff;flex-shrink:0;letter-spacing:.5px}
 .sc-logo img{width:100%;height:100%;object-fit:contain;border-radius:9px}
@@ -161,13 +162,13 @@ img{display:block;max-width:100%}
 .comp-tabs::-webkit-scrollbar{display:none}
 .comp-tab{padding:9px 18px;font-size:13px;font-weight:700;cursor:pointer;color:var(--muted);border-bottom:2.5px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all .15s}
 .comp-tab.active{color:var(--navy);border-color:var(--red)}
-.ladder-tbl{width:100%;border-collapse:collapse;display:table}
-.ladder-tbl thead{display:table-header-group}
-.ladder-tbl tbody{display:table-row-group}
-.ladder-tbl tr{display:table-row}
-.ladder-tbl th{display:table-cell;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:7px 8px;border-bottom:1px solid var(--border);text-align:center}
+.ladder-tbl{width:100%;border-collapse:collapse!important;display:table!important}
+.ladder-tbl thead{display:table-header-group!important}
+.ladder-tbl tbody{display:table-row-group!important}
+.ladder-tbl tr{display:table-row!important}
+.ladder-tbl th{display:table-cell!important;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);padding:7px 8px;border-bottom:1px solid var(--border);text-align:center}
 .ladder-tbl th.left{text-align:left}
-.ladder-tbl td{display:table-cell;padding:9px 8px;border-bottom:1px solid var(--border);font-size:13px;text-align:center;vertical-align:middle}
+.ladder-tbl td{display:table-cell!important;padding:9px 8px;border-bottom:1px solid var(--border);font-size:13px;text-align:center;vertical-align:middle}
 .ladder-tbl td.left{text-align:left}
 .ladder-tbl tr:last-child td{border-bottom:none}
 .ladder-tbl tr.promo{background:rgba(204,34,34,.04)}
