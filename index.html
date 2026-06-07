@@ -256,12 +256,16 @@ table.lt th.tl,table.lt td.tl{text-align:left}
   .sp-ads-sidebar{display:none}
   .sc-label-block{display:none}
 
-  .hamburger{display:flex;width:44px;height:44px;border-radius:10px}
-  .nav-actions{margin-right:4px}
-  .nav-inner{padding:0 12px 0 16px}
+  .hamburger{display:flex;width:48px;height:48px;border-radius:10px;flex-shrink:0}
+  .nav-actions{gap:10px;margin-right:8px}
+  .nav-inner{padding:0 8px 0 12px}
 
   .hero-ctas{flex-direction:column;gap:8px}
-  .hero-ctas .btn{width:100%;justify-content:center}
+  .hero-ctas .btn{width:100%;justify-content:flex-start;padding-left:20px}
+
+  #side-identity{display:none}
+
+  #player-spotlight{width:100%;margin:0}
 }
 @media(max-width:480px){
   .hero-hed{font-size:40px}
@@ -272,7 +276,7 @@ table.lt th.tl,table.lt td.tl{text-align:left}
   .app-grid{grid-template-columns:repeat(3,1fr)}
 }
 
-.mob-reg-card{display:none;margin:0 20px 0;background:linear-gradient(135deg,var(--navy2),var(--navy3));border-radius:var(--r);padding:14px 16px}
+.mob-reg-card{display:none;margin:0 20px;background:linear-gradient(135deg,var(--navy2),var(--navy3));border-radius:var(--r);padding:16px}
 @media(max-width:768px){.mob-reg-card{display:block}}
 </style>
 </head>
@@ -410,15 +414,14 @@ table.lt th.tl,table.lt td.tl{text-align:left}
 <div class="app-section"><div class="app-inner"><div class="app-grid"><a href="#" class="ab"><div class="ai"><i class="ti ti-calendar-event"></i></div><span class="al">Fixtures</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-chart-bar"></i></div><span class="al">Results</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-list-numbers"></i></div><span class="al">Ladders</span></a><a href="#" class="ab"><div class="ai" style="padding:6px"><img src="https://res.cloudinary.com/dozdbhjhs/image/upload/v1780757750/rdca_logo-_Transparent_grugfj.png" style="width:100%;height:100%;object-fit:contain" alt="Clubs"></div><span class="al">Clubs</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-map-pin"></i></div><span class="al">Grounds</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-news"></i></div><span class="al">News</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-shield-half-filled"></i></div><span class="al">Rep Cricket</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-gavel"></i></div><span class="al">Umpires</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-user-plus"></i></div><span class="al">Register</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-rosette"></i></div><span class="al">Sponsors</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-calendar"></i></div><span class="al">Events</span></a><a href="#" class="ab"><div class="ai"><i class="ti ti-mail"></i></div><span class="al">Contact</span></a></div></div></div>
 
 
+
 <!-- MOBILE REGISTER BANNER — shows on mobile only -->
 <div class="mob-reg-card">
-  <div style="display:flex;align-items:center;gap:12px">
-    <div style="flex:1">
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#fff;letter-spacing:.3px">2025&ndash;26 Season</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.5);margin-top:2px">Registrations now open for all clubs</div>
-    </div>
-    <a class="btn btn-red btn-sm" href="#" style="flex-shrink:0"><i class="ti ti-user-plus" style="font-size:13px"></i> Register</a>
-  </div>
+  <div style="font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px">2025&ndash;26 Season</div>
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:#fff;letter-spacing:.3px;margin-bottom:4px">Registrations Now Open</div>
+  <div style="font-size:12px;color:rgba(255,255,255,.5);margin-bottom:14px">All clubs and players welcome — sign up for next season now.</div>
+  <a class="btn btn-red" href="#" style="width:100%;justify-content:center"><i class="ti ti-user-plus" style="font-size:14px"></i> Register for 2025&ndash;26</a>
+</div>
 </div>
 <!-- MAIN LAYOUT -->
 <div class="main-layout">
@@ -566,7 +569,7 @@ table.lt th.tl,table.lt td.tl{text-align:left}
 <div class="col-side">
 
 <!-- IDENTITY -->
-<div class="card" style="overflow:hidden">
+<div class="card" id="side-identity" style="overflow:hidden">
   <div style="height:110px;background-image:url('https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=600&q=78&auto=format&fit=crop');background-size:cover;background-position:center;position:relative">
     <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,31,60,.3),rgba(13,31,60,.9))"></div>
   </div>
@@ -592,7 +595,7 @@ table.lt th.tl,table.lt td.tl{text-align:left}
 </div>
 
 <!-- PLAYER SPOTLIGHT -->
-<div class="card" style="overflow:hidden">
+<div class="card" id="player-spotlight" style="overflow:hidden">
   <div style="height:90px;background-image:url('https://images.unsplash.com/photo-1595210382051-4d2c31fcc2f4?w=600&q=78&auto=format&fit=crop');background-size:cover;background-position:center 30%;position:relative">
     <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(13,31,60,.15),rgba(13,31,60,.88))"></div>
     <div style="position:absolute;bottom:10px;left:14px;z-index:1"><div class="eyebrow" style="color:rgba(255,255,255,.45)">Feature</div><div style="font-family:'Bebas Neue',sans-serif;font-size:16px;color:#fff">Player Spotlight</div></div>
