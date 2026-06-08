@@ -119,21 +119,21 @@
     </div>
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Competitions</div>
-      <a class="f-link" href="#">Premier Division</a><a class="f-link" href="#">Division 1</a>
-      <a class="f-link" href="#">Division 2</a><a class="f-link" href="#">Junior Competitions</a>
-      <a class="f-link" href="#">Women's Cricket</a><a class="f-link" href="#">Veterans Cricket</a>
+      <a class="f-link" href="/competition.html">Premier Division</a><a class="f-link" href="/competition.html">Division 1</a>
+      <a class="f-link" href="/competition.html">Division 2</a><a class="f-link" href="/juniors.html">Junior Competitions</a>
+      <a class="f-link" href="/womens.html">Women's Cricket</a><a class="f-link" href="/veterans.html">Veterans Cricket</a>
     </div>
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Resources</div>
-      <a class="f-link" href="#">Documents &amp; Forms</a><a class="f-link" href="#">Laws of Cricket</a>
-      <a class="f-link" href="#">Umpire Resources</a><a class="f-link" href="#">Ground Information</a>
-      <a class="f-link" href="#">Playing Conditions</a><a class="f-link" href="#">Safe Cricket Policy</a>
+      <a class="f-link" href="/documents.html">Documents &amp; Forms</a><a class="f-link" href="#">Laws of Cricket</a>
+      <a class="f-link" href="/umpires.html">Umpire Resources</a><a class="f-link" href="#">Ground Information</a>
+      <a class="f-link" href="#">Playing Conditions</a><a class="f-link" href="/child-safety.html">Safe Cricket Policy</a>
     </div>
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Association</div>
-      <a class="f-link" href="#">About RDCA</a><a class="f-link" href="#">Executive Committee</a>
-      <a class="f-link" href="#">Representative Cricket</a><a class="f-link" href="#">Sponsors &amp; Partners</a>
-      <a class="f-link" href="#">Contact Us</a><a class="f-link" href="#">Privacy Policy</a>
+      <a class="f-link" href="#">About RDCA</a><a class="f-link" href="/committees.html">Executive Committee</a>
+      <a class="f-link" href="/juniors.html">Representative Cricket</a><a class="f-link" href="/sponsors.html">Sponsors &amp; Partners</a>
+      <a class="f-link" href="/contact.html">Contact Us</a><a class="f-link" href="#">Privacy Policy</a>
     </div>
   </div>
   <div style="border-top:1px solid rgba(255,255,255,.04);padding:14px 20px">

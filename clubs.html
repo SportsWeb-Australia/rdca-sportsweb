@@ -51,8 +51,7 @@
     var d = window.RDCA_DATA || {};
     var n = (d.clubs||[]).length;
     document.getElementById("clubs-note").innerHTML =
-      "Showing <strong>" + n + "</strong> clubs. " + (d.clubsNote || "") +
-      ' <span class="flag flag-review"><i class="ti ti-alert-triangle"></i> Needs RDCA review</span>';
+      "Showing <strong>" + n + "</strong> clubs. " + (d.clubsNote || "");
   })();
 </script>
 </body>

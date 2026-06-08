@@ -10,12 +10,18 @@
   var D = function () { return window.RDCA_DATA || {}; };
   var P = function () { return window.RDCA_PLAYHQ || {}; };
 
+  // Content-governance pills ("Needs RDCA review" / "Sample") are OFF for the
+  // public build. Set window.RDCA_SHOW_FLAGS = true (before this script loads)
+  // to show them again for internal QA. The underlying flags stay in the data.
+  if (typeof window.RDCA_SHOW_FLAGS !== "boolean") window.RDCA_SHOW_FLAGS = false;
+
   function esc(s){ return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){
     return ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;" })[c]; }); }
   function el(sel){ return typeof sel === "string" ? document.querySelector(sel) : sel; }
   function set(sel, html){ var n = el(sel); if (n) n.innerHTML = html; }
 
   function flag(item){
+    if (!window.RDCA_SHOW_FLAGS) return "";
     if (item && item.needsReview) return ' <span class="flag flag-review"><i class="ti ti-alert-triangle"></i> Needs RDCA review</span>';
     if (item && item.sample)      return ' <span class="flag flag-mock"><i class="ti ti-flask"></i> Sample</span>';
     return "";
