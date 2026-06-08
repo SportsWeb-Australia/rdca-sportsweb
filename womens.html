@@ -30,6 +30,8 @@
 
 <div class="page-wrap">
 
+  <div id="sec-about"></div>
+
   <div class="section-block">
     <div class="block-hed">Fixtures, Results &amp; Ladders</div>
     <div class="block-sub">Live on PlayHQ for this section.</div>
@@ -38,9 +40,11 @@
 
   <div class="section-block">
     <div class="block-hed">Committees, Documents &amp; Teams</div>
-    <div class="block-sub">Links below open the current pages on rdca.com while we migrate full content.</div>
+    <div class="block-sub">Committee, fixtures and documents for RDCA Women's cricket.</div>
     <div class="tile-grid" id="sec-links"></div>
   </div>
+
+  <div id="sec-conduct"></div>
 
   <div class="section-block">
     <div class="callout callout-red">
@@ -78,6 +82,8 @@
       '<div class="playhq-actions"><a class="btn btn-red btn-sm" href="' + url + '" target="_blank" rel="noopener">View on PlayHQ <i class="ti ti-external-link"></i></a></div></div>';
 
     RDCA.render.sectionLinks(SECTION, "#sec-links");
+    RDCA.render.sectionAbout(SECTION, "#sec-about");
+    RDCA.render.sectionConduct(SECTION, "#sec-conduct");
   })();
 </script>
 </body>

@@ -18,7 +18,7 @@
 <div data-rdca="masthead"></div>
 
 <header class="page-hero">
-  <div class="page-hero-inner">
+  <div class="page-hero-inner wide">
     <div class="crumb"><a href="/index.html">Home</a> <i class="ti ti-chevron-right"></i> Contact</div>
     <div class="eyebrow">Get in touch</div>
     <h1>Contact the RDCA</h1>
@@ -26,8 +26,8 @@
   </div>
 </header>
 
-<div class="page-wrap">
-  <div class="tile-grid">
+<div class="page-wrap wide">
+  <div class="contact-grid">
 
     <div class="panel">
       <div class="block-hed">Association Details</div>
@@ -36,20 +36,43 @@
         <a class="doc-item" href="tel:+61398700000"><div class="doc-ic"><i class="ti ti-phone"></i></div><div><div class="doc-tt">(03) 9870 0000</div><div class="doc-mt">Phone</div></div></a>
         <div class="doc-item"><div class="doc-ic"><i class="ti ti-map-pin"></i></div><div><div class="doc-tt">Ringwood, Victoria</div><div class="doc-mt">Australia</div></div></div>
       </div>
-      <div style="display:flex;gap:8px;margin-top:14px">
-        <a href="#" class="nav-icon-btn" aria-label="Facebook" style="background:var(--navy)"><i class="ti ti-brand-facebook"></i></a>
-        <a href="#" class="nav-icon-btn" aria-label="Instagram" style="background:var(--navy)"><i class="ti ti-brand-instagram"></i></a>
-        <a href="#" class="nav-icon-btn" aria-label="Twitter" style="background:var(--navy)"><i class="ti ti-brand-twitter"></i></a>
-        <a href="#" class="nav-icon-btn" aria-label="YouTube" style="background:var(--navy)"><i class="ti ti-brand-youtube"></i></a>
+      <div style="display:flex;gap:10px;margin-top:16px">
+        <a href="https://www.facebook.com/ringwooddca/" target="_blank" rel="noopener" class="csoc" aria-label="RDCA on Facebook"><i class="ti ti-brand-facebook"></i></a>
+        <a href="https://www.instagram.com/rdca6519/" target="_blank" rel="noopener" class="csoc" aria-label="RDCA on Instagram"><i class="ti ti-brand-instagram"></i></a>
       </div>
     </div>
 
     <div class="panel panel-navy">
-      <div class="block-hed">Send a Message</div>
-      <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.8);margin:8px 0 16px">
-        The quickest way to reach the RDCA is by email. An online enquiry form can be added here and wired to the association's inbox or CRM.
-      </p>
-      <a class="btn btn-red" href="mailto:admin@rdca.com.au"><i class="ti ti-mail"></i> Email the RDCA</a>
+      <div class="block-hed">Send an Enquiry</div>
+      <p class="cform-intro">Send us a message and we'll get back to you. <span class="cform-tag">(Preview form — to be replaced with the RDCA Zoho enquiry form.)</span></p>
+
+      <!-- ZOHO ENQUIRY FORM EMBED GOES HERE — replace the <form> below with the Zoho embed code -->
+      <form class="cform" id="enquiry-form" novalidate>
+        <div class="cform-row">
+          <label>Name<input type="text" name="name" placeholder="Your name" autocomplete="name"></label>
+          <label>Email<input type="email" name="email" placeholder="you@email.com" autocomplete="email"></label>
+        </div>
+        <div class="cform-row">
+          <label>Phone <span class="opt">(optional)</span><input type="tel" name="phone" placeholder="04xx xxx xxx" autocomplete="tel"></label>
+          <label>Topic
+            <select name="topic">
+              <option>General enquiry</option>
+              <option>Juniors</option>
+              <option>Seniors</option>
+              <option>Veterans</option>
+              <option>Women's cricket</option>
+              <option>Umpires</option>
+              <option>Sponsorship</option>
+            </select>
+          </label>
+        </div>
+        <label>Message<textarea name="message" rows="4" placeholder="How can we help?"></textarea></label>
+        <div class="cform-actions">
+          <button type="submit" class="btn btn-red"><i class="ti ti-send"></i> Send enquiry</button>
+          <a class="cform-tag" href="mailto:admin@rdca.com.au">or email admin@rdca.com.au</a>
+        </div>
+        <div class="cform-note" id="enquiry-note" hidden></div>
+      </form>
     </div>
 
   </div>
@@ -64,5 +87,20 @@
 
 <div data-rdca="sponsor-carousel"></div>
 <div data-rdca="footer"></div>
+
+<script>
+  (function(){
+    var f = document.getElementById("enquiry-form");
+    if (!f) return;
+    f.addEventListener("submit", function(e){
+      e.preventDefault();
+      var n = document.getElementById("enquiry-note");
+      n.hidden = false;
+      n.textContent = "Thanks! This is a preview form — the live RDCA enquiry form (Zoho) will be embedded here and deliver messages straight to the association.";
+      var b = f.querySelector("button[type=submit]");
+      if (b){ b.disabled = true; b.style.opacity = ".6"; b.style.cursor = "default"; }
+    });
+  })();
+</script>
 </body>
 </html>

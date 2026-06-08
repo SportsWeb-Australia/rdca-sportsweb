@@ -35,7 +35,9 @@
       var html = clubs.map(function (c) {
         var band = c.logo
           ? '<img src="' + esc(c.logo) + '" alt="' + esc(c.name) + '">'
-          : '<span style="color:#fff;font-family:\'Bebas Neue\',sans-serif;font-size:22px;letter-spacing:1px">' + esc(initials(c.name)) + '</span>';
+          : ((window.RDCA && window.RDCA.LOGO)
+              ? '<img src="' + window.RDCA.LOGO + '" alt="' + esc(c.name) + '" style="opacity:.95">'
+              : '<span style="color:#fff;font-family:\'Bebas Neue\',sans-serif;font-size:22px;letter-spacing:1px">' + esc(initials(c.name)) + '</span>');
         return '<a class="club-card" href="#" title="Club profile coming soon">' +
                  '<div class="club-band">' + band + '</div>' +
                  '<div class="club-body">' +
@@ -46,14 +48,26 @@
       set(sel, html);
     },
 
-    // ---- sponsors grid ----
+    // ---- sponsors grid (branded cards, mirrors the homepage treatment) ----
     sponsors: function (sel) {
+      var modes = {
+        invert: function (l, n) { return '<img src="' + esc(l) + '" alt="' + esc(n) + '" style="height:44px;max-width:160px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:12px">'; },
+        chip:   function (l, n) { return '<div style="background:#fff;border-radius:8px;padding:6px 11px;display:inline-flex;align-items:center;margin-bottom:12px"><img src="' + esc(l) + '" alt="' + esc(n) + '" style="height:34px;max-width:140px;object-fit:contain"></div>'; },
+        bare:   function (l, n) { return '<img src="' + esc(l) + '" alt="' + esc(n) + '" style="height:44px;max-width:160px;object-fit:contain;border-radius:6px;margin-bottom:12px">'; }
+      };
       var html = (D().sponsors || []).map(function (s) {
-        return '<a class="tile" href="' + esc(s.url) + '" target="_blank" rel="noopener">' +
-                 '<div class="tile-ic red"><i class="ti ti-heart-handshake"></i></div>' +
-                 '<div><div class="tile-tt">' + esc(s.name) + flag(s) + '</div>' +
-                 '<div class="tile-tx">' + esc(s.tier) + '</div></div>' +
-                 '<i class="ti ti-external-link"></i></a>';
+        var grad = (s.grad && s.grad.length === 2)
+          ? ("linear-gradient(135deg," + s.grad[0] + "," + s.grad[1] + ")")
+          : "linear-gradient(135deg,var(--navy),var(--navy3))";
+        var logo = s.logo ? (modes[s.logoMode] || modes.bare)(s.logo, s.name) : "";
+        return '<a class="sp-card" href="' + esc(s.url) + '" target="_blank" rel="noopener" style="background:' + grad + '">' +
+                 '<div class="sp-body">' +
+                   '<div class="sp-tier">' + esc(s.tier) + '</div>' +
+                   logo +
+                   '<div class="sp-name">' + esc(s.name) + flag(s) + '</div>' +
+                   (s.blurb ? '<div class="sp-blurb">' + esc(s.blurb) + '</div>' : '') +
+                   '<div class="sp-cta"><i class="ti ti-external-link"></i> ' + esc(s.cta || "Visit Website") + '</div>' +
+                 '</div></a>';
       }).join("");
       set(sel, html);
     },
@@ -66,7 +80,7 @@
         return '<a class="doc-item" href="' + esc(doc.url) + '"' + (doc.url !== "#" ? ' target="_blank" rel="noopener"' : '') + '>' +
                  '<div class="doc-ic"><i class="ti ' + ic + '"></i></div>' +
                  '<div><div class="doc-tt">' + esc(doc.title) + flag(doc) + '</div>' +
-                 '<div class="doc-mt">' + (doc.type === "pdf" ? "PDF download" : "Opens on rdca.com") + '</div></div>' +
+                 '<div class="doc-mt">' + (doc.type === "pdf" ? "Download (PDF)" : "View") + '</div></div>' +
                  '<i class="ti ' + act + '"></i></a>';
       }).join("");
       set(sel, html);
@@ -77,18 +91,23 @@
       var c = D().committees || {}; var groups = c.groups || [];
       var html = groups.map(function (g) {
         var members = (g.members || []).map(function (m) {
-          return '<div class="profile-card">' +
-                   '<div class="profile-av">' + esc(initials(m.name)) + '</div>' +
+          var av = m.photo
+            ? '<div class="profile-av"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div>'
+            : '<div class="profile-av">' + esc(initials(m.name)) + '</div>';
+          var tel = m.phone ? m.phone.replace(/[^0-9+]/g, "") : "";
+          return '<div class="profile-card">' + av +
                    '<div class="profile-name">' + esc(m.name) + flag(m) + '</div>' +
                    '<div class="profile-role">' + esc(m.role || "") + '</div>' +
-                   (m.email ? '<div class="profile-contact"><a href="mailto:' + esc(m.email) + '">' + esc(m.email) + '</a></div>' : '') +
+                   '<div class="profile-contact">' +
+                     (m.phone ? '<a href="tel:' + esc(tel) + '"><i class="ti ti-phone"></i> ' + esc(m.phone) + '</a>' : '') +
+                     (m.email ? '<a href="mailto:' + esc(m.email) + '"><i class="ti ti-mail"></i> ' + esc(m.email) + '</a>' : '') +
+                   '</div>' +
                  '</div>';
         }).join("");
-        var linkBtn = (g.url && g.url !== "#")
-          ? '<a class="btn btn-outline-red btn-sm" href="' + esc(g.url) + '" target="_blank" rel="noopener">View on rdca.com <i class="ti ti-external-link"></i></a>' : '';
         return '<div class="section-block"><div class="block-hed">' + esc(g.name) + flag(g) + '</div>' +
-               (members ? '<div class="profile-grid" style="margin-bottom:12px">' + members + '</div>' : '<div class="block-sub">Member list to be migrated from rdca.com.</div>') +
-               linkBtn + '</div>';
+               (g.note ? '<div class="block-sub">' + esc(g.note) + '</div>' : '') +
+               (members ? '<div class="profile-grid">' + members + '</div>' : '') +
+               '</div>';
       }).join("");
       set(sel, html);
     },
@@ -110,6 +129,63 @@
         return '<tr><td>' + esc(r.season) + '</td><td>' + esc(r.grade) + '</td><td>' + esc(r.club) + flag(r) + '</td></tr>';
       }).join("");
       set(sel, '<table class="honours-table"><thead><tr><th>Season</th><th>Grade</th><th>Premier</th></tr></thead><tbody>' + rows + '</tbody></table>');
+    },
+
+    // ---- life members table ----
+    lifeMembers: function (sel) {
+      var rows = ((D().honours && D().honours.lifeMembers) || []).map(function (m) {
+        var nm = m.doc
+          ? '<a href="' + esc(m.doc) + '" target="_blank" rel="noopener">' + esc(m.name) + ' <i class="ti ti-external-link" style="font-size:11px;color:var(--muted)"></i></a>'
+          : esc(m.name);
+        return '<tr><td>' + esc(m.season) + '</td><td>' + nm + flag(m) + '</td><td>' + esc(m.assoc) + '</td></tr>';
+      }).join("");
+      set(sel, '<table class="honours-table"><thead><tr><th>Season</th><th>Life Member</th><th>Association</th></tr></thead><tbody>' + rows + '</tbody></table>');
+    },
+
+    // ---- honour boards hub (links to live RDCA boards) ----
+    honoursHub: function (sel) {
+      var html = ((D().honours && D().honours.boards) || []).map(function (b) {
+        return '<a class="tile" href="' + esc(b.url) + '" target="_blank" rel="noopener">' +
+                 '<div class="tile-ic"><i class="ti ' + (b.icon || "ti-link") + '"></i></div>' +
+                 '<div><div class="tile-tt">' + esc(b.label) + ' <i class="ti ti-external-link" style="font-size:12px;color:var(--muted)"></i>' + flag(b) + '</div>' +
+                 (b.note ? '<div style="font-size:12px;color:var(--muted);margin-top:2px">' + esc(b.note) + '</div>' : '') +
+                 '</div></a>';
+      }).join("");
+      set(sel, html);
+    },
+
+    // ---- section about (native) ----
+    sectionAbout: function (sectionKey, sel) {
+      var s = (D().sections || {})[sectionKey];
+      if (!s || !s.aboutText) { set(sel, ""); return; }
+      set(sel, '<div class="section-block"><div class="block-hed">About ' + esc(s.title) + '</div><div class="prose">' + s.aboutText + '</div></div>');
+    },
+
+    // ---- section code of conduct (native) ----
+    sectionConduct: function (sectionKey, sel) {
+      var s = (D().sections || {})[sectionKey];
+      if (!s || !s.conduct) { set(sel, ""); return; }
+      var c = s.conduct;
+      var link = c.url
+        ? '<div style="margin-top:14px"><a class="btn btn-navy btn-sm" href="' + esc(c.url) + '" target="_blank" rel="noopener"><i class="ti ti-clipboard-check"></i> Read the full ' + esc(s.title) + ' Code of Conduct <i class="ti ti-external-link"></i></a></div>'
+        : '';
+      set(sel, '<div class="section-block"><div class="block-hed">Code of Conduct</div><div class="prose">' + (c.summary || '') + '</div>' + link + '</div>');
+    },
+
+    // ---- premiers timeline ----
+    premiers: function (sel) {
+      var seasons = ((D().honours && D().honours.premiers) || []);
+      if (!seasons.length) { set(sel, ""); return; }
+      var html = '<div class="tl">' + seasons.map(function (s) {
+        var wins = (s.winners || []).map(function (w) {
+          var club = w.club
+            ? '<span class="tl-club">' + esc(w.club) + '</span>'
+            : '<span class="tl-tbc">TBC</span>';
+          return '<div class="tl-win"><span class="tl-grade">' + esc(w.grade) + '</span>' + club + '</div>';
+        }).join("");
+        return '<div class="tl-item"><div class="tl-season">' + esc(s.season) + flag(s) + '</div><div class="tl-card">' + wins + '</div></div>';
+      }).join("") + '</div>';
+      set(sel, html);
     },
 
     // ---- umpire links ----
@@ -146,15 +222,19 @@
       var tiles = [];
       function tile(label, url, icon, item){
         if (!url) return;
-        tiles.push('<a class="tile" href="' + esc(url) + '" target="_blank" rel="noopener">' +
+        var blank = item && item.blank;
+        var internal = item && item.internal;
+        var href = blank
+          ? ('/placeholder.html?title=' + encodeURIComponent(label) + '&src=' + encodeURIComponent(url))
+          : esc(url);
+        var attrs = (blank || internal) ? '' : ' target="_blank" rel="noopener"';
+        tiles.push('<a class="tile" href="' + href + '"' + attrs + '>' +
           '<div class="tile-ic"><i class="ti ' + (icon||"ti-link") + '"></i></div>' +
           '<div><div class="tile-tt">' + esc(label) + flag(item) + '</div></div>' +
           '<i class="ti ti-chevron-right"></i></a>');
       }
-      if (s.about)         tile(s.about.label, s.about.url, "ti-info-circle", s.about);
       if (s.committee)     tile(s.committee.label, s.committee.url, "ti-users", s.committee);
       if (s.documents)     tile(s.documents.label, s.documents.url, "ti-folder", s.documents);
-      if (s.codeOfConduct) tile(s.codeOfConduct.label, s.codeOfConduct.url, "ti-clipboard-check", s.codeOfConduct);
       (s.links || []).forEach(function (l){ tile(l.label, l.url, "ti-link", l); });
       (s.repTeams || []).forEach(function (r){ tile(r.label, r.url, "ti-shield-half-filled", r); });
       set(sel, tiles.join(""));
