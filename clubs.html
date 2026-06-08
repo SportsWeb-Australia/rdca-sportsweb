@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- RDCA Club Directory — data-driven from /site-data.js (clubs[]). -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Club Directory — RDCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<link rel="stylesheet" href="/_shared.css">
+<link rel="stylesheet" href="/_pages.css">
+<script src="/rdca-components.js"></script>
+</head>
+<body data-page="clubs">
+
+<div data-rdca="masthead"></div>
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div class="crumb"><a href="/index.html">Home</a> <i class="ti ti-chevron-right"></i> Clubs</div>
+    <div class="eyebrow">Member Clubs</div>
+    <h1>Club Directory</h1>
+    <p class="page-sub">RDCA's member clubs across Premier Division, Division 1 and Division 2. Tap a club for its profile (coming soon).</p>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <div class="section-block">
+    <div class="block-sub" id="clubs-note"></div>
+    <div class="club-grid" id="clubs-mount"></div>
+  </div>
+
+  <div class="section-block">
+    <div class="callout callout-blue">
+      <i class="ti ti-info-circle"></i>
+      <div><strong>Editing this page is one line.</strong> Club cards are generated from <code>RDCA_DATA.clubs</code> in <code>/site-data.js</code>. Add a club object there and it appears here automatically — later this same array becomes a SportsWeb One / Supabase <code>clubs</code> collection.</div>
+    </div>
+  </div>
+</div>
+
+<div data-rdca="sponsor-carousel"></div>
+<div data-rdca="footer"></div>
+
+<script src="/site-data.js"></script>
+<script src="/rdca-render.js"></script>
+<script>
+  RDCA.render.clubs("#clubs-mount");
+  (function(){
+    var d = window.RDCA_DATA || {};
+    var n = (d.clubs||[]).length;
+    document.getElementById("clubs-note").innerHTML =
+      "Showing <strong>" + n + "</strong> clubs. " + (d.clubsNote || "") +
+      ' <span class="flag flag-review"><i class="ti ti-alert-triangle"></i> Needs RDCA review</span>';
+  })();
+</script>
+</body>
+</html>

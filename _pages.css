@@ -1,0 +1,126 @@
+/* ============================================================================
+   RDCA SportsWeb One — inner-page patterns (_pages.css)
+   Loaded AFTER _shared.css on every page EXCEPT the homepage.
+   Adds only NEW classes for inner pages (page hero, breadcrumb, tiles, doc
+   lists, profile cards, PlayHQ blocks, review/mock flags). It never redefines
+   a selector that already exists in _shared.css — no duplicated rules.
+   Reuses the approved tokens: --navy --navy2 --navy3 --red --red2 --bg --card
+   --border --muted --r --rsm --shadow --shadow2 --text.
+   ========================================================================== */
+
+/* ---- shared inner-page hero / header pattern -------------------------------
+   The homepage keeps its own bespoke .hero. Inner pages use .page-hero. */
+.page-hero{position:relative;background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,var(--navy3) 100%);color:#fff;overflow:hidden}
+.page-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(900px 300px at 85% -40%,rgba(204,34,34,.28),transparent 60%);pointer-events:none}
+.page-hero-inner{position:relative;max-width:1200px;margin:0 auto;padding:34px 20px 30px}
+.page-hero .eyebrow{color:rgba(255,255,255,.6)}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:.98;letter-spacing:.5px;margin:6px 0 8px}
+.page-hero .page-sub{font-size:14px;color:rgba(255,255,255,.72);max-width:640px;line-height:1.6}
+.page-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+
+/* breadcrumb */
+.crumb{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.5);margin-bottom:4px}
+.crumb a{color:rgba(255,255,255,.7);text-decoration:none}
+.crumb a:hover{color:#fff}
+.crumb i{font-size:13px;opacity:.5}
+
+/* ---- generic page container + section rhythm ---- */
+.page-wrap{max-width:1200px;margin:0 auto;padding:30px 20px 50px}
+.section-block{margin-bottom:38px}
+.section-block:last-child{margin-bottom:0}
+.block-hed{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.4px;color:var(--navy);margin-bottom:4px}
+.block-sub{font-size:13px;color:var(--muted);margin-bottom:16px;max-width:680px;line-height:1.6}
+.lead{font-size:15px;line-height:1.7;color:#2a3b52;max-width:760px}
+
+/* ---- link tiles (section landing, quick links) ---- */
+.tile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.tile{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}
+.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow2);border-color:rgba(204,34,34,.35)}
+.tile-ic{flex:0 0 40px;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-size:20px}
+.tile-ic.red{background:linear-gradient(135deg,var(--red),var(--red2))}
+.tile-tt{font-weight:700;font-size:14px;color:var(--navy);margin-bottom:2px;display:flex;align-items:center;gap:6px}
+.tile-tx{font-size:12px;color:var(--muted);line-height:1.5}
+.tile .ti-chevron-right{margin-left:auto;color:var(--muted);font-size:16px}
+
+/* ---- PlayHQ blocks (Competition Hub + section pages) ---- */
+.playhq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.playhq-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.playhq-card h3{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.3px;color:var(--navy)}
+.playhq-card p{font-size:12px;color:var(--muted);line-height:1.55;flex:1}
+.playhq-badge{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;background:#e8f0ed;color:#0a7a4a;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:4px 9px;border-radius:20px}
+.playhq-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.playhq-note{background:#fff8e6;border:1px solid #f3e2b3;color:#7a5a10;font-size:12px;line-height:1.6;border-radius:var(--rsm);padding:12px 14px;display:flex;gap:9px;align-items:flex-start}
+.playhq-note i{font-size:16px;flex:0 0 auto;margin-top:1px}
+
+/* ---- club directory (data-driven) ---- */
+.club-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.club-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .15s ease}
+.club-card:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}
+.club-band{height:54px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy3))}
+.club-band img{height:38px;max-width:80%;object-fit:contain;filter:drop-shadow(0 2px 5px rgba(0,0,0,.35))}
+.club-body{padding:13px 14px}
+.club-name{font-weight:700;font-size:13px;color:var(--navy);line-height:1.3;margin-bottom:5px}
+.club-meta{font-size:11px;color:var(--muted);display:flex;align-items:center;gap:5px;margin-bottom:3px}
+.club-meta i{font-size:13px;color:var(--red)}
+
+/* ---- documents / downloads list (data-driven) ---- */
+.doc-list{display:flex;flex-direction:column;gap:8px}
+.doc-item{display:flex;align-items:center;gap:13px;background:var(--card);border:1px solid var(--border);border-radius:var(--rsm);padding:12px 14px;text-decoration:none;color:inherit;transition:border-color .15s ease,box-shadow .15s ease}
+.doc-item:hover{border-color:rgba(204,34,34,.4);box-shadow:var(--shadow)}
+.doc-ic{flex:0 0 34px;width:34px;height:34px;border-radius:8px;background:#f0f2f5;display:flex;align-items:center;justify-content:center;color:var(--red);font-size:17px}
+.doc-tt{font-weight:600;font-size:13px;color:var(--navy)}
+.doc-mt{font-size:11px;color:var(--muted)}
+.doc-item .ti-download,.doc-item .ti-external-link{margin-left:auto;color:var(--muted);font-size:16px}
+
+/* ---- profile cards (committees / board / contacts — data-driven) ---- */
+.profile-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px}
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow);text-align:center}
+.profile-av{width:60px;height:60px;border-radius:50%;margin:0 auto 10px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.5px}
+.profile-name{font-weight:700;font-size:14px;color:var(--navy)}
+.profile-role{font-size:12px;color:var(--red);font-weight:600;margin:2px 0 8px}
+.profile-contact{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:3px}
+.profile-contact a{color:var(--muted);text-decoration:none}
+.profile-contact a:hover{color:var(--navy)}
+
+/* ---- honours / records rows (data-driven) ---- */
+.honours-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;font-size:13px}
+.honours-table th{background:var(--navy);color:#fff;text-align:left;padding:10px 14px;font-family:'Bebas Neue',sans-serif;letter-spacing:.6px;font-size:14px;font-weight:400}
+.honours-table td{padding:10px 14px;border-top:1px solid var(--border);color:var(--text)}
+.honours-table tr:nth-child(even) td{background:#fafbfc}
+
+/* ---- info / callout panels ---- */
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.panel-navy{background:linear-gradient(135deg,var(--navy),var(--navy3));color:#fff;border:none}
+.panel-navy .block-hed{color:#fff}
+.callout{display:flex;gap:12px;align-items:flex-start;border-radius:var(--rsm);padding:14px 16px;font-size:13px;line-height:1.6}
+.callout i{font-size:18px;flex:0 0 auto;margin-top:1px}
+.callout-red{background:#fdecec;border:1px solid #f3c4c4;color:#8a1c1c}
+.callout-blue{background:#eaf2fb;border:1px solid #c3dbf3;color:#16467e}
+
+/* ---- status flags (content governance) ---- */
+.flag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:3px 8px;border-radius:20px;vertical-align:middle}
+.flag-review{background:#fff3d6;color:#946200;border:1px solid #f0d899}
+.flag-mock{background:#eceff3;color:#5a6880;border:1px solid #dde2e9}
+.flag i{font-size:12px}
+
+/* ============================================================================
+   Responsive — collapse cleanly at tablet/mobile. (Global overflow-x:hidden,
+   img max-width:100%, body max-width:100vw already enforced in _shared.css.)
+   ========================================================================== */
+@media(max-width:768px){
+  .page-hero h1{font-size:36px}
+  .page-hero-inner{padding:26px 16px 24px}
+  .page-wrap{padding:22px 16px 40px}
+  .tile-grid{grid-template-columns:1fr 1fr}
+  .playhq-grid{grid-template-columns:1fr}
+  .club-grid{grid-template-columns:1fr 1fr}
+  .profile-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .page-hero h1{font-size:30px}
+  .tile-grid{grid-template-columns:1fr}
+  .club-grid{grid-template-columns:1fr 1fr}
+  .profile-grid{grid-template-columns:1fr}
+  .honours-table{font-size:12px}
+  .honours-table th,.honours-table td{padding:8px 10px}
+}
