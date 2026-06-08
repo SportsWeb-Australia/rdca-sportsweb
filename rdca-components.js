@@ -48,35 +48,64 @@
     <div style="display:flex;align-items:center;gap:10px"><img src="${LOGO}" alt="RDCA" style="width:36px;height:36px;object-fit:contain"><div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff">RDCA</div></div>
     <button onclick="document.getElementById('mob-menu').classList.remove('open')" style="background:rgba(255,255,255,.1);border:none;color:#fff;width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center"><i class="ti ti-x" style="font-size:18px"></i></button>
   </div>
-  <a href="#" class="mob-link active"><i class="ti ti-home"></i> Home</a>
-  <a href="#" class="mob-link"><i class="ti ti-trophy"></i> Competitions</a>
-  <a href="#" class="mob-link"><i class="ti ti-news"></i> News</a>
-  <a href="#" class="mob-link"><i class="ti ti-buildings"></i> Clubs</a>
-  <a href="#" class="mob-link"><i class="ti ti-calendar-event"></i> Fixtures</a>
-  <a href="#" class="mob-link"><i class="ti ti-chart-bar"></i> Results</a>
-  <a href="#" class="mob-link"><i class="ti ti-list-numbers"></i> Ladders</a>
-  <a href="#" class="mob-link"><i class="ti ti-shield-half-filled"></i> Representative</a>
-  <a href="#" class="mob-link"><i class="ti ti-gavel"></i> Umpires</a>
-  <a href="#" class="mob-link"><i class="ti ti-mail"></i> Contact</a>
+  <a href="/index.html" class="mob-link active"><i class="ti ti-home"></i> Home</a>
+  <div class="mob-group">Competitions</div>
+  <a href="/competition.html" class="mob-link"><i class="ti ti-layout-grid"></i> Competition Hub</a>
+  <a href="/seniors.html" class="mob-link"><i class="ti ti-trophy"></i> Seniors</a>
+  <a href="/juniors.html" class="mob-link"><i class="ti ti-friends"></i> Juniors</a>
+  <a href="/womens.html" class="mob-link"><i class="ti ti-ball-baseball"></i> Women's</a>
+  <a href="/veterans.html" class="mob-link"><i class="ti ti-medal"></i> Veterans</a>
+  <a href="/umpires.html" class="mob-link"><i class="ti ti-gavel"></i> Umpires</a>
+  <div class="mob-group">Club &amp; Community</div>
+  <a href="/clubs.html" class="mob-link"><i class="ti ti-buildings"></i> Clubs</a>
+  <a href="/news.html" class="mob-link"><i class="ti ti-news"></i> News</a>
+  <a href="/honours.html" class="mob-link"><i class="ti ti-award"></i> Honours</a>
+  <div class="mob-group">About RDCA</div>
+  <a href="/board.html" class="mob-link"><i class="ti ti-users"></i> The Board</a>
+  <a href="/committees.html" class="mob-link"><i class="ti ti-address-book"></i> Committees &amp; Contacts</a>
+  <a href="/documents.html" class="mob-link"><i class="ti ti-folder"></i> Documents &amp; Forms</a>
+  <a href="/sponsors.html" class="mob-link"><i class="ti ti-heart-handshake"></i> Sponsors &amp; Partners</a>
+  <a href="/child-safety.html" class="mob-link"><i class="ti ti-shield-check"></i> Child Safety</a>
+  <a href="/contact.html" class="mob-link"><i class="ti ti-mail"></i> Contact</a>
   <div style="margin-top:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)">
-    <a class="btn btn-red" style="width:100%;justify-content:center" href="#"><i class="ti ti-user-plus"></i> Register for 2026-27</a>
+    <a class="btn btn-red" style="width:100%;justify-content:center" href="/competition.html"><i class="ti ti-user-plus"></i> Register for 2026-27</a>
   </div>
 </div>`,
     "header-nav": `<nav class="nav-wrap">
   <div class="nav-inner">
-    <a class="nav-brand" href="#"><img src="${LOGO}" alt="RDCA" class="nav-logo-img"><div><div class="brand-name">RDCA</div><div class="brand-sub">Ringwood &amp; District Cricket Association</div></div></a>
+    <a class="nav-brand" href="/index.html"><img src="${LOGO}" alt="RDCA" class="nav-logo-img"><div><div class="brand-name">RDCA</div><div class="brand-sub">Ringwood &amp; District Cricket Association</div></div></a>
     <div class="nav-links">
-      <a class="nav-link active" href="#">Home</a>
-      <a class="nav-link" href="#" style="display:flex;align-items:center;gap:3px">Competitions <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
-      <a class="nav-link" href="#">News</a><a class="nav-link" href="#">Clubs</a>
-      <a class="nav-link" href="#">Fixtures</a><a class="nav-link" href="#">Results</a>
-      <a class="nav-link" href="#">Stats</a><a class="nav-link" href="#">Umpires</a>
-      <a class="nav-link" href="#" style="display:flex;align-items:center;gap:3px">More <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
+      <a class="nav-link active" href="/index.html">Home</a>
+      <div class="nav-item">
+        <a class="nav-link nav-drop-toggle" href="/competition.html">Competitions <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
+        <div class="nav-drop">
+          <a href="/competition.html">Competition Hub</a>
+          <a href="/seniors.html">Seniors</a>
+          <a href="/juniors.html">Juniors</a>
+          <a href="/womens.html">Women's</a>
+          <a href="/veterans.html">Veterans</a>
+          <a href="/umpires.html">Umpires</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/clubs.html">Clubs</a>
+      <a class="nav-link" href="/news.html">News</a>
+      <a class="nav-link" href="/honours.html">Honours</a>
+      <div class="nav-item">
+        <a class="nav-link nav-drop-toggle" href="/board.html">About <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
+        <div class="nav-drop">
+          <a href="/board.html">The Board</a>
+          <a href="/committees.html">Committees &amp; Contacts</a>
+          <a href="/documents.html">Documents &amp; Forms</a>
+          <a href="/sponsors.html">Sponsors &amp; Partners</a>
+          <a href="/child-safety.html">Child Safety</a>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </div>
     </div>
     <div class="nav-actions">
       <button class="nav-icon-btn"><i class="ti ti-search" style="font-size:18px"></i></button>
       <button class="nav-icon-btn hamburger" onclick="document.getElementById('mob-menu').classList.add('open')"><i class="ti ti-menu-2" style="font-size:18px"></i></button>
-      <a class="btn btn-red btn-sm" href="#">Register</a>
+      <a class="btn btn-red btn-sm" href="/competition.html">Register</a>
     </div>
   </div>
 </nav>`,
@@ -107,7 +136,7 @@
         <img src="${LOGO}" alt="RDCA" style="width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3))">
         <div><div style="font-family:'Bebas Neue',sans-serif;font-size:20px;color:#fff;letter-spacing:.5px">RDCA</div><div style="font-size:10px;color:rgba(255,255,255,.28)">Ringwood &amp; District Cricket Association</div></div>
       </div>
-      <div style="font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px;margin-bottom:14px">Proudly serving Melbourne's eastern suburbs since 1892. Dedicated to growing the great game of cricket in the east.</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px;margin-bottom:14px">Proudly serving Melbourne's eastern suburbs. Dedicated to growing the great game of cricket in the east.</div>
       <div style="display:flex;gap:10px">
         <a href="https://www.facebook.com/ringwooddca/" target="_blank" rel="noopener" aria-label="RDCA on Facebook" class="f-soc"><i class="ti ti-brand-facebook"></i></a>
         <a href="https://www.instagram.com/rdca6519/" target="_blank" rel="noopener" aria-label="RDCA on Instagram" class="f-soc"><i class="ti ti-brand-instagram"></i></a>
@@ -115,21 +144,15 @@
     </div>
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Competitions</div>
-      <a class="f-link" href="/competition.html">Premier Division</a><a class="f-link" href="/competition.html">Division 1</a>
-      <a class="f-link" href="/competition.html">Division 2</a><a class="f-link" href="/juniors.html">Junior Competitions</a>
-      <a class="f-link" href="/womens.html">Women's Cricket</a><a class="f-link" href="/veterans.html">Veterans Cricket</a>
+      <a class="f-link" href="/competition.html">Competition Hub</a><a class="f-link" href="/seniors.html">Seniors</a><a class="f-link" href="/juniors.html">Juniors</a><a class="f-link" href="/womens.html">Women's</a><a class="f-link" href="/veterans.html">Veterans</a><a class="f-link" href="/umpires.html">Umpires</a>
     </div>
     <div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Resources</div>
-      <a class="f-link" href="/documents.html">Documents &amp; Forms</a><a class="f-link" href="#">Laws of Cricket</a>
-      <a class="f-link" href="/umpires.html">Umpire Resources</a><a class="f-link" href="#">Ground Information</a>
-      <a class="f-link" href="#">Playing Conditions</a><a class="f-link" href="/child-safety.html">Safe Cricket Policy</a>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Club &amp; Community</div>
+      <a class="f-link" href="/clubs.html">Clubs</a><a class="f-link" href="/news.html">News</a><a class="f-link" href="/honours.html">Honours</a><a class="f-link" href="/sponsors.html">Sponsors &amp; Partners</a>
     </div>
     <div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Association</div>
-      <a class="f-link" href="#">About RDCA</a><a class="f-link" href="/committees.html">Executive Committee</a>
-      <a class="f-link" href="/juniors.html">Representative Cricket</a><a class="f-link" href="/sponsors.html">Sponsors &amp; Partners</a>
-      <a class="f-link" href="/contact.html">Contact Us</a><a class="f-link" href="#">Privacy Policy</a>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">About RDCA</div>
+      <a class="f-link" href="/board.html">The Board</a><a class="f-link" href="/committees.html">Committees &amp; Contacts</a><a class="f-link" href="/documents.html">Documents &amp; Forms</a><a class="f-link" href="/child-safety.html">Child Safety</a><a class="f-link" href="/contact.html">Contact</a>
     </div>
   </div>
   <div style="border-top:1px solid rgba(255,255,255,.04);padding:14px 20px">
@@ -156,10 +179,12 @@
   };
   // page key (body[data-page]) -> which nav item to highlight
   var ACTIVEMAP = {
-    "home": "home", "index": "home", "competition": "competitions",
-    "clubs": "clubs", "umpires": "umpires", "news": "news", "contact": "contact",
-    "juniors": "competitions", "seniors": "competitions",
-    "veterans": "competitions", "womens": "competitions"
+    "home":"home","index":"home",
+    "competition":"competitions","juniors":"competitions","seniors":"competitions",
+    "veterans":"competitions","womens":"competitions","umpires":"competitions",
+    "clubs":"clubs","news":"news","honours":"honours",
+    "board":"about","committees":"about","documents":"about","sponsors":"about",
+    "child-safety":"about","contact":"about"
   };
 
   function wireNav() {

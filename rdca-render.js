@@ -172,6 +172,26 @@
       set(sel, '<div class="section-block"><div class="block-hed">Code of Conduct</div><div class="prose">' + (c.summary || '') + '</div>' + link + '</div>');
     },
 
+    // ---- board of management ----
+    board: function (sel) {
+      var members = ((D().board && D().board.members) || []);
+      function initials(n){ return (n||"").split(/\s+/).map(function(w){return w[0]||"";}).join("").slice(0,2).toUpperCase(); }
+      var html = members.map(function (m) {
+        var av = m.photo
+          ? '<div class="board-av"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div>'
+          : '<div class="board-av board-av-init">' + esc(initials(m.name)) + '</div>';
+        var c = '';
+        if (m.phone) c += '<a href="tel:' + esc(m.phone.replace(/\s+/g,'')) + '"><i class="ti ti-phone"></i> ' + esc(m.phone) + '</a>';
+        if (m.email) c += '<a href="mailto:' + esc(m.email) + '"><i class="ti ti-mail"></i> ' + esc(m.email) + '</a>';
+        return '<div class="board-card">' + av +
+          '<div class="board-name">' + esc(m.name) + flag(m) + '</div>' +
+          '<div class="board-role">' + esc(m.role) + '</div>' +
+          (c ? '<div class="board-contact">' + c + '</div>' : '') +
+        '</div>';
+      }).join("");
+      set(sel, '<div class="board-grid">' + html + '</div>');
+    },
+
     // ---- premiers timeline ----
     premiers: function (sel) {
       var seasons = ((D().honours && D().honours.premiers) || []);

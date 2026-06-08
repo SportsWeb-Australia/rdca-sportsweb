@@ -15,6 +15,18 @@
 
 window.RDCA_DATA = {
 
+  board: {
+    note:"RDCA Board of Management — governs the Association across all sections.",
+    members: [
+      { role:"President",                name:"Michael Finn",   phone:"0400 700 606", email:"president@rdca.com", photo:"https://static.wixstatic.com/media/bad3dd_6f15d366553945be94fdd286d2d90f83~mv2.jpg/v1/fill/w_220,h_220,al_c,q_85,enc_avif,quality_auto/bad3dd_6f15d366553945be94fdd286d2d90f83~mv2.jpg", real:true },
+      { role:"Vice President",           name:"Pat Meehan",                                                       photo:"https://static.wixstatic.com/media/c4acf1_6be612129ee9478bb0a6862c7ada6aeb~mv2.jpg/v1/fill/w_220,h_220,al_c,q_85,enc_avif,quality_auto/c4acf1_6be612129ee9478bb0a6862c7ada6aeb~mv2.jpg", real:true },
+      { role:"Finance Manager",          name:"Graeme Seymour", phone:"0439 114 843", email:"finance@rdca.com",  photo:"https://static.wixstatic.com/media/9e3e38_a80cee731bb24a6d9cf1eca20284baa9~mv2.jpg/v1/fill/w_220,h_220,al_c,q_85,enc_avif,quality_auto/9e3e38_a80cee731bb24a6d9cf1eca20284baa9~mv2.jpg", real:true },
+      { role:"Senior Chairman",          name:"Wayne Hartley",  phone:"0411 403 149", real:true },
+      { role:"Admin Manager",            name:"Timothy Court",  phone:"0407 838 275", email:"court@rdca.com",    photo:"https://static.wixstatic.com/media/bad3dd_1a740526e320490489b01534c604bce3~mv2.jpg/v1/fill/w_220,h_220,al_c,q_85,enc_avif,quality_auto/bad3dd_1a740526e320490489b01534c604bce3~mv2.jpg", real:true },
+      { role:"Umpires Chairman",         name:"Jordan Russell", phone:"0413 357 444", email:"j_brussell@outlook.com", photo:"https://static.wixstatic.com/media/9e3e38_25b16187e9dd42bc82f6374e0570750d~mv2.jpg/v1/fill/w_220,h_220,al_c,q_85,enc_avif,quality_auto/9e3e38_25b16187e9dd42bc82f6374e0570750d~mv2.jpg", real:true },
+      { role:"Marketing & Sponsorship",  name:"Jo Fairy",       phone:"0411 313 334", email:"marketing@rdca.com",photo:"https://static.wixstatic.com/media/bad3dd_f9f0950efb9048f3b8388b1a54351292~mv2.jpg/v1/fill/w_220,h_220,al_c,q_85,enc_avif,quality_auto/bad3dd_f9f0950efb9048f3b8388b1a54351292~mv2.jpg", real:true }
+    ]
+  },
   meta: {
     assoc: "Ringwood & District Cricket Association",
     short: "RDCA",
