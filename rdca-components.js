@@ -49,6 +49,7 @@
     <button onclick="document.getElementById('mob-menu').classList.remove('open')" style="background:rgba(255,255,255,.1);border:none;color:#fff;width:36px;height:36px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center"><i class="ti ti-x" style="font-size:18px"></i></button>
   </div>
   <a href="/index.html" class="mob-link active"><i class="ti ti-home"></i> Home</a>
+  <a href="#" class="mob-link" data-rdca-alerts><i class="ti ti-bell"></i> Match-Day Alerts</a>
   <div class="mob-group">Competitions</div>
   <a href="/competition.html" class="mob-link"><i class="ti ti-layout-grid"></i> Competition Hub</a>
   <a href="/seniors.html" class="mob-link"><i class="ti ti-trophy"></i> Seniors</a>
@@ -60,6 +61,9 @@
   <a href="/clubs.html" class="mob-link"><i class="ti ti-buildings"></i> Clubs</a>
   <a href="/news.html" class="mob-link"><i class="ti ti-news"></i> News</a>
   <a href="/honours.html" class="mob-link"><i class="ti ti-award"></i> Honours</a>
+  <div class="mob-group">Media</div>
+  <a href="/photos.html" class="mob-link"><i class="ti ti-photo"></i> Photos</a>
+  <a href="/video.html" class="mob-link"><i class="ti ti-device-tv"></i> Live Video</a>
   <div class="mob-group">About RDCA</div>
   <a href="/board.html" class="mob-link"><i class="ti ti-users"></i> The Board</a>
   <a href="/committees.html" class="mob-link"><i class="ti ti-address-book"></i> Committees &amp; Contacts</a>
@@ -87,9 +91,16 @@
           <a href="/umpires.html">Umpires</a>
         </div>
       </div>
-      <a class="nav-link" href="/clubs.html">Clubs</a>
+      <a class="nav-link" href="/clubs.html"><img src="/rdca-logo.png" class="nav-link-logo" alt="">Clubs</a>
       <a class="nav-link" href="/news.html">News</a>
       <a class="nav-link" href="/honours.html">Honours</a>
+      <div class="nav-item">
+        <a class="nav-link nav-drop-toggle" href="/photos.html">Media <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
+        <div class="nav-drop">
+          <a href="/photos.html">Photos</a>
+          <a href="/video.html">Live Video</a>
+        </div>
+      </div>
       <div class="nav-item">
         <a class="nav-link nav-drop-toggle" href="/board.html">About <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
         <div class="nav-drop">
@@ -103,6 +114,7 @@
       </div>
     </div>
     <div class="nav-actions">
+      <button class="nav-icon-btn" data-rdca-alerts type="button" title="Match-day alerts" aria-label="Match-day alerts"><i class="ti ti-bell" style="font-size:18px"></i></button>
       <button class="nav-icon-btn"><i class="ti ti-search" style="font-size:18px"></i></button>
       <button class="nav-icon-btn hamburger" onclick="document.getElementById('mob-menu').classList.add('open')"><i class="ti ti-menu-2" style="font-size:18px"></i></button>
       <a class="btn btn-red btn-sm" href="/competition.html">Register</a>
@@ -175,7 +187,8 @@
     "home": "/index.html", "competitions": "/competition.html", "news": "/news.html",
     "clubs": "/clubs.html", "fixtures": "/competition.html", "results": "/competition.html",
     "ladders": "/competition.html", "stats": "/competition.html", "umpires": "/umpires.html",
-    "representative": "/juniors.html", "contact": "/contact.html"
+    "representative": "/juniors.html", "contact": "/contact.html",
+    "media": "/photos.html", "photos": "/photos.html", "live video": "/video.html"
   };
   // page key (body[data-page]) -> which nav item to highlight
   var ACTIVEMAP = {
@@ -184,7 +197,8 @@
     "veterans":"competitions","womens":"competitions","umpires":"competitions",
     "clubs":"clubs","news":"news","honours":"honours",
     "board":"about","committees":"about","documents":"about","sponsors":"about",
-    "child-safety":"about","contact":"about"
+    "child-safety":"about","contact":"about",
+    "photos":"media","video":"media"
   };
 
   function wireNav() {

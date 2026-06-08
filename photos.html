@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- RDCA Photos — season galleries hosted by Field of View Photography (ShootProof).
+     Album list is data-driven from /site-data.js (photoAlbums[]). Covers are placeholders. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Photos — RDCA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
+<link rel="stylesheet" href="/_shared.css">
+<link rel="stylesheet" href="/_pages.css">
+<script src="/rdca-components.js"></script>
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#0d1f3c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<script src="/pwa.js" defer></script>
+</head>
+<body data-page="photos">
+
+<div data-rdca="masthead"></div>
+
+<header class="page-hero">
+  <div class="page-hero-inner wide">
+    <div class="crumb"><a href="/index.html">Home</a> <i class="ti ti-chevron-right"></i> Photos</div>
+    <div class="eyebrow">Gallery</div>
+    <h1>Photos</h1>
+    <p class="page-sub">Around the grounds, finals, presentation nights and premiership posters &mdash; full match-day galleries, season by season.</p>
+  </div>
+</header>
+
+<div class="page-wrap wide">
+
+  <div class="section-block">
+    <div class="callout callout-blue">
+      <i class="ti ti-camera"></i>
+      <div id="photos-note"></div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-hed">Season Galleries</div>
+    <div class="block-sub">Each gallery opens on the Field of View Photography site, where you can browse and order prints.</div>
+    <div class="album-grid" id="album-mount"></div>
+  </div>
+
+</div>
+
+<div data-rdca="sponsor-carousel"></div>
+<div data-rdca="footer"></div>
+
+<script src="/site-data.js"></script>
+<script src="/rdca-render.js"></script>
+<script>
+(function(){
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g,function(ch){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[ch];}); }
+  var d = window.RDCA_DATA || {};
+  var note = document.getElementById("photos-note");
+  if (note) note.innerHTML = (d.photosNote || "");
+
+  var albums = d.photoAlbums || [];
+  var html = albums.map(function(a){
+    var tag = a.tag ? '<span class="album-tag' + (a.tag==="Latest" ? " is-latest" : "") + '">' + esc(a.tag) + '</span>' : '';
+    return '<a class="album-card" href="' + esc(a.url) + '" target="_blank" rel="noopener">' +
+             '<div class="album-cover" style="background-image:url(\'' + esc(a.cover) + '\')">' + tag +
+               '<span class="album-view"><i class="ti ti-photo"></i> View gallery <i class="ti ti-external-link"></i></span>' +
+             '</div>' +
+             '<div class="album-body"><div class="album-season">' + esc(a.season) + '</div>' +
+               '<div class="album-sub"><i class="ti ti-camera"></i> Field of View Photography</div></div>' +
+           '</a>';
+  }).join("");
+  document.getElementById("album-mount").innerHTML = html ||
+    '<div class="empty-state"><div class="empty-ic"><i class="ti ti-photo"></i></div><h2>Galleries coming soon</h2><p>Season galleries will appear here.</p></div>';
+})();
+</script>
+</body>
+</html>

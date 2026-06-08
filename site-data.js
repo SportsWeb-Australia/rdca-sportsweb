@@ -43,19 +43,68 @@ window.RDCA_DATA = {
      //       mapping — until then the card shows the club initials.
      ========================================================================== */
   clubsNote: "12 of RDCA's 28 member clubs shown. Remaining 16 + per-club logos to be added from rdca.com / RDCA records.",
+  /* ============================================================================
+     MEDIA — photo galleries (Field of View) + video (FrogBox live + archive)
+     photoAlbums.url are the REAL Field of View / ShootProof season galleries.
+     cover/thumb images are PLACEHOLDER action shots — swap for real RDCA photos.
+     ========================================================================== */
+  photosNote: "Match-day galleries are shot by Field of View Photography (an RDCA partner) and hosted on their site. Cover images here are placeholders \u2014 swap each for the season's real cover.",
+  photoAlbums: [
+    { season:"Season 2025/26",              tag:"Latest",  url:"https://fieldofviewphotography.shootproof.com/gallery/28411719/album/21236651", cover:"https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=70&auto=format&fit=crop" },
+    { season:"Season 2024/25",              tag:"",        url:"https://fieldofviewphotography.shootproof.com/gallery/25299604/album/18262926", cover:"https://images.unsplash.com/photo-1593766788306-28561086c716?w=600&q=70&auto=format&fit=crop" },
+    { season:"Season 2023/24",              tag:"",        url:"https://fieldofviewphotography.shootproof.com/gallery/19340167/album/15929979", cover:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=70&auto=format&fit=crop" },
+    { season:"Season 2022/23",              tag:"",        url:"https://fieldofviewphotography.shootproof.com/gallery/19340167/album/13278529", cover:"https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=600&q=70&auto=format&fit=crop" },
+    { season:"Premiership Posters 2024/25", tag:"Posters", url:"https://fieldofviewphotography.shootproof.com/gallery/15321413/album/19797650", cover:"https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?w=600&q=70&auto=format&fit=crop" },
+    { season:"Premiership Posters 2023/24", tag:"Posters", url:"https://fieldofviewphotography.shootproof.com/gallery/15321413/album/16811579", cover:"https://images.unsplash.com/photo-1593766827228-8737b4534aa6?w=600&q=70&auto=format&fit=crop" }
+  ],
+  photoStrip: ["https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1593766788306-28561086c716?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1593766827228-8737b4534aa6?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1593766788306-28561086c716?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=70&auto=format&fit=crop","https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?w=600&q=70&auto=format&fit=crop"],
+  liveStream: { status:"offline", title:"RDCA Match of the Round", sub:"Live streaming returns each Saturday during the season.", sponsor:"Your business here", embedUrl:null, channelUrl:"https://www.frogbox.live/" },
+  videosNote: "Selected RDCA games are streamed live via FrogBox and replays are kept here. The archive below is placeholder \u2014 wire it to the RDCA FrogBox channel.",
+  videos: [
+    { title:"Premier Division \u2014 Ringwood v Croydon", comp:"Premier Division", date:"Sat 14 Feb", thumb:"https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=70&auto=format&fit=crop", url:"#", mock:true },
+    { title:"Division 1 \u2014 Kilsyth v Lilydale",        comp:"Division 1",       date:"Sat 14 Feb", thumb:"https://images.unsplash.com/photo-1593766788306-28561086c716?w=600&q=70&auto=format&fit=crop", url:"#", mock:true },
+    { title:"Women's \u2014 Grand Final",                 comp:"Women's",          date:"Sun 1 Feb",  thumb:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=70&auto=format&fit=crop", url:"#", mock:true },
+    { title:"Premier Division \u2014 Semi Final",          comp:"Finals",           date:"Sat 7 Feb",  thumb:"https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=600&q=70&auto=format&fit=crop", url:"#", mock:true },
+    { title:"Juniors \u2014 U16 Grand Final",              comp:"Juniors",          date:"Sun 8 Feb",  thumb:"https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?w=600&q=70&auto=format&fit=crop", url:"#", mock:true },
+    { title:"Veterans \u2014 Round 12",                    comp:"Veterans",         date:"Sat 31 Jan", thumb:"https://images.unsplash.com/photo-1593766827228-8737b4534aa6?w=600&q=70&auto=format&fit=crop", url:"#", mock:true }
+  ],
+  /* ----- players: profile + trading-card data (illustrative mock) ----- */
+  playersNote: "Player profiles are illustrative mock data for layout. Real players, photos and season stats to be supplied by clubs / PlayHQ.",
+  players: [
+    { key:"jake-smith", name:"Jake Smith", club:"ringwood", grade:"Premier Division", role:"Opening Batter",
+      bats:"Right-hand bat", bowls:"Right-arm medium", number:34, born:"2001", town:"Ringwood",
+      rarity:"Season Top Scorer", photo:"https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=600&q=72&auto=format&fit=crop", season:"2024/25",
+      bat:{ M:15, Runs:687, HS:"142", Avg:57.3, SR:81.2, "50s":5, "100s":2 },
+      bowl:{ M:15, Wkts:6, Best:"2/14", Avg:31.0, Econ:4.6 }, mock:true },
+    { key:"mia-chen", name:"Mia Chen", club:"croydon", grade:"Premier Division", role:"All-rounder",
+      bats:"Left-hand bat", bowls:"Right-arm off-spin", number:7, born:"2003", town:"Croydon",
+      rarity:"Players' Player", photo:"https://images.unsplash.com/photo-1593766788306-28561086c716?w=600&q=72&auto=format&fit=crop", season:"2024/25",
+      bat:{ M:14, Runs:431, HS:"88", Avg:39.2, SR:74.5, "50s":3, "100s":0 },
+      bowl:{ M:14, Wkts:21, Best:"4/22", Avg:18.6, Econ:3.8 }, mock:true },
+    { key:"sam-rivera", name:"Sam Rivera", club:"kilsyth", grade:"Division 1", role:"Fast Bowler",
+      bats:"Right-hand bat", bowls:"Right-arm fast", number:88, born:"2000", town:"Kilsyth",
+      rarity:"Most Wickets", photo:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=600&q=72&auto=format&fit=crop", season:"2024/25",
+      bat:{ M:13, Runs:142, HS:"34*", Avg:17.7, SR:96.0, "50s":0, "100s":0 },
+      bowl:{ M:13, Wkts:34, Best:"6/31", Avg:13.4, Econ:3.2 }, mock:true },
+    { key:"tom-okafor", name:"Tom Okafor", club:"heathmont", grade:"Premier Division", role:"Wicketkeeper-Batter",
+      bats:"Right-hand bat", bowls:"-", number:1, born:"1999", town:"Heathmont",
+      rarity:"Most Dismissals", photo:"https://images.unsplash.com/photo-1607734834519-d8576ae60ea6?w=600&q=72&auto=format&fit=crop", season:"2024/25",
+      bat:{ M:15, Runs:509, HS:"96", Avg:42.4, SR:88.1, "50s":4, "100s":0 },
+      bowl:{ M:15, Wkts:0, Best:"-", Avg:0, Econ:0 }, mock:true }
+  ],
   clubs: [
-    { key:"ringwood",      name:"Ringwood CC",       grade:"Premier Division", logo:null, real:true },
-    { key:"croydon",       name:"Croydon CC",        grade:"Premier Division", logo:null, real:true },
-    { key:"heathmont",     name:"Heathmont CC",      grade:"Premier Division", logo:null, real:true },
-    { key:"wongapark",     name:"Wonga Park CC",     grade:"Premier Division", logo:null, real:true },
-    { key:"kilsyth",       name:"Kilsyth CC",        grade:"Division 1",       logo:null, real:true },
-    { key:"lilydale",      name:"Lilydale CC",       grade:"Division 1",       logo:null, real:true },
-    { key:"warranwood",    name:"Warranwood CC",     grade:"Division 1",       logo:null, real:true },
-    { key:"montrose",      name:"Montrose CC",       grade:"Division 1",       logo:null, real:true },
-    { key:"coldstream",    name:"Coldstream CC",     grade:"Division 2",       logo:null, real:true },
-    { key:"mtevelyn",      name:"Mt Evelyn CC",      grade:"Division 2",       logo:null, real:true },
-    { key:"chirnsidepark", name:"Chirnside Park CC", grade:"Division 2",       logo:null, real:true },
-    { key:"mooroolbark",   name:"Mooroolbark CC",    grade:"Division 2",       logo:null, real:true }
+    { key:"ringwood",      name:"Ringwood CC",       grade:"Premier Division", logo:null, colors:["#0d2f6b","#0a1f47"], real:true },
+    { key:"croydon",       name:"Croydon CC",        grade:"Premier Division", logo:null, colors:["#0a5c2e","#063d1e"], real:true },
+    { key:"heathmont",     name:"Heathmont CC",      grade:"Premier Division", logo:null, colors:["#7a1020","#4d0a14"], real:true },
+    { key:"wongapark",     name:"Wonga Park CC",     grade:"Premier Division", logo:null, colors:["#0a5e5e","#063d3d"], real:true },
+    { key:"kilsyth",       name:"Kilsyth CC",        grade:"Division 1",       logo:null, colors:["#13366b","#0a1f44"], real:true },
+    { key:"lilydale",      name:"Lilydale CC",       grade:"Division 1",       logo:null, colors:["#4a1d6b","#2f1247"], real:true },
+    { key:"warranwood",    name:"Warranwood CC",     grade:"Division 1",       logo:null, colors:["#a8521a","#6e3410"], real:true },
+    { key:"montrose",      name:"Montrose CC",       grade:"Division 1",       logo:null, colors:["#1f5c2e","#123d1d"], real:true },
+    { key:"coldstream",    name:"Coldstream CC",     grade:"Division 2",       logo:null, colors:["#334155","#1e293b"], real:true },
+    { key:"mtevelyn",      name:"Mt Evelyn CC",      grade:"Division 2",       logo:null, colors:["#7a1530","#4d0d1f"], real:true },
+    { key:"chirnsidepark", name:"Chirnside Park CC", grade:"Division 2",       logo:null, colors:["#1e3a8a","#152a63"], real:true },
+    { key:"mooroolbark",   name:"Mooroolbark CC",    grade:"Division 2",       logo:null, colors:["#0e5f8a","#093f5c"], real:true }
   ],
 
   /* ==========================================================================

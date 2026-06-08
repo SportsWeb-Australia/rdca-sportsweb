@@ -32,20 +32,35 @@
     // ---- club directory ----
     clubs: function (sel) {
       var d = D(); var clubs = d.clubs || [];
-      var html = clubs.map(function (c) {
+      function slugDiv(g){ return (g||"other").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); }
+      var order=[], groups={};
+      clubs.forEach(function(c){ var g=c.grade||"Other"; if(!groups[g]){groups[g]=[];order.push(g);} groups[g].push(c); });
+      var navy = "linear-gradient(135deg,var(--navy),var(--navy3))";
+      function card(c){
+        var grad = (c.colors && c.colors.length>=2) ? ("linear-gradient(135deg,"+c.colors[0]+","+c.colors[1]+")") : navy;
         var band = c.logo
           ? '<img src="' + esc(c.logo) + '" alt="' + esc(c.name) + '">'
           : ((window.RDCA && window.RDCA.LOGO)
-              ? '<img src="' + window.RDCA.LOGO + '" alt="' + esc(c.name) + '" style="opacity:.95">'
+              ? '<img src="' + window.RDCA.LOGO + '" alt="' + esc(c.name) + '" style="opacity:.96">'
               : '<span style="color:#fff;font-family:\'Bebas Neue\',sans-serif;font-size:22px;letter-spacing:1px">' + esc(initials(c.name)) + '</span>');
-        return '<a class="club-card" href="#" title="Club profile coming soon">' +
-                 '<div class="club-band">' + band + '</div>' +
+        var href = c.key ? ('/club.html?club=' + encodeURIComponent(c.key)) : '#';
+        return '<a class="club-card" href="' + href + '">' +
+                 '<div class="club-band" style="background:' + grad + '">' + band + '</div>' +
                  '<div class="club-body">' +
                    '<div class="club-name">' + esc(c.name) + '</div>' +
                    '<div class="club-meta"><i class="ti ti-trophy"></i> ' + esc(c.grade) + '</div>' +
                  '</div></a>';
-      }).join("");
-      set(sel, html);
+      }
+      var tabs='', panes='';
+      order.forEach(function(g,idx){
+        var sl=slugDiv(g); var act = idx===0 ? ' active' : '';
+        tabs += '<button class="folder-tab' + act + '" type="button" data-fld="' + sl + '">' + esc(g) +
+                '<span class="ft-n">' + groups[g].length + '</span></button>';
+        var cards = groups[g].map(card).join("");
+        panes += '<div class="folder-pane' + act + '" id="fld-' + sl + '"><div class="club-grid">' + cards + '</div></div>';
+      });
+      set(sel, '<div class="folder"><div class="folder-tabs" role="tablist">' + tabs + '</div>' +
+               '<div class="folder-body">' + panes + '</div></div>');
     },
 
     // ---- sponsors grid (branded cards, mirrors the homepage treatment) ----
