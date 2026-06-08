@@ -72,9 +72,10 @@
     : "linear-gradient(135deg,var(--navy),var(--navy3))";
   hero.style.background = grad;
 
+  function clubMono(n){ var b=(n||"").replace(/\s*CC$/i,"").trim().split(/\s+/).filter(Boolean); return (b.length>=2 ? b.map(function(w){return w[0];}).join("") : (b[0]||"")).slice(0,3).toUpperCase(); }
   var logoImg = c.logo
     ? '<img src="' + esc(c.logo) + '" alt="' + esc(c.name) + '">'
-    : ((window.RDCA && window.RDCA.LOGO) ? '<img src="' + window.RDCA.LOGO + '" alt="' + esc(c.name) + '">' : "");
+    : '<span class="club-hero-mono">' + esc(clubMono(c.name)) + '</span>';
 
   hero.innerHTML =
     '<div class="club-hero-inner">'+

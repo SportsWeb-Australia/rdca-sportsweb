@@ -56,7 +56,6 @@
   <a href="/juniors.html" class="mob-link"><i class="ti ti-friends"></i> Juniors</a>
   <a href="/womens.html" class="mob-link"><i class="ti ti-ball-baseball"></i> Women's</a>
   <a href="/veterans.html" class="mob-link"><i class="ti ti-medal"></i> Veterans</a>
-  <a href="/umpires.html" class="mob-link"><i class="ti ti-gavel"></i> Umpires</a>
   <div class="mob-group">Club &amp; Community</div>
   <a href="/clubs.html" class="mob-link"><i class="ti ti-buildings"></i> Clubs</a>
   <a href="/news.html" class="mob-link"><i class="ti ti-news"></i> News</a>
@@ -64,9 +63,11 @@
   <div class="mob-group">Media</div>
   <a href="/photos.html" class="mob-link"><i class="ti ti-photo"></i> Photos</a>
   <a href="/video.html" class="mob-link"><i class="ti ti-device-tv"></i> Live Video</a>
-  <div class="mob-group">About RDCA</div>
+  <a href="/social.html" class="mob-link"><i class="ti ti-share"></i> Social Media</a>
+  <div class="mob-group">RDCA</div>
   <a href="/board.html" class="mob-link"><i class="ti ti-users"></i> The Board</a>
   <a href="/committees.html" class="mob-link"><i class="ti ti-address-book"></i> Committees &amp; Contacts</a>
+  <a href="/umpires.html" class="mob-link"><i class="ti ti-gavel"></i> Umpires</a>
   <a href="/documents.html" class="mob-link"><i class="ti ti-folder"></i> Documents &amp; Forms</a>
   <a href="/sponsors.html" class="mob-link"><i class="ti ti-heart-handshake"></i> Sponsors &amp; Partners</a>
   <a href="/child-safety.html" class="mob-link"><i class="ti ti-shield-check"></i> Child Safety</a>
@@ -88,7 +89,6 @@
           <a href="/juniors.html">Juniors</a>
           <a href="/womens.html">Women's</a>
           <a href="/veterans.html">Veterans</a>
-          <a href="/umpires.html">Umpires</a>
         </div>
       </div>
       <a class="nav-link" href="/clubs.html"><img src="/rdca-logo.png" class="nav-link-logo" alt="">Clubs</a>
@@ -99,13 +99,15 @@
         <div class="nav-drop">
           <a href="/photos.html">Photos</a>
           <a href="/video.html">Live Video</a>
+          <a href="/social.html">Social Media</a>
         </div>
       </div>
       <div class="nav-item">
-        <a class="nav-link nav-drop-toggle" href="/board.html">About <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
+        <a class="nav-link nav-drop-toggle" href="/board.html">RDCA <i class="ti ti-chevron-down" style="font-size:12px"></i></a>
         <div class="nav-drop">
           <a href="/board.html">The Board</a>
           <a href="/committees.html">Committees &amp; Contacts</a>
+          <a href="/umpires.html">Umpires</a>
           <a href="/documents.html">Documents &amp; Forms</a>
           <a href="/sponsors.html">Sponsors &amp; Partners</a>
           <a href="/child-safety.html">Child Safety</a>
@@ -124,7 +126,7 @@
     "ticker": `<div class="ticker-bar">
   <div class="ticker-inner">
     <div class="ticker-pill"><span class="live-dot"></span> Live Scores</div>
-    <div class="ticker-scroll"><div class="ticker-track"><div class="ti"><span class="tt">Ringwood CC vs Croydon CC</span><span class="ts">4/187 (42.2 ov)</span><span class="tx">Chasing 224 — need 37 off 48 balls</span></div><div class="ti"><span class="tt">Heathmont CC vs Lilydale CC</span><span class="ts">142 ALL OUT</span><span class="tx">Lilydale need 143 to win</span></div><div class="ti"><span class="tt">Wonga Park CC vs Warranwood CC</span><span class="ts">2/201 (38 ov)</span><span class="tx">Set 265, trailing by 64</span></div><div class="ti"><span class="tt">Kilsyth CC vs Montrose CC</span><span class="ts">156 ALL OUT</span><span class="tx">Montrose yet to bat</span></div><div class="ti"><span class="tt">Div 1 — Coldstream vs Mt Evelyn</span><span class="ts">3/178 (36 ov)</span><span class="tx">Chasing 212, need 34 off 24</span></div><div class="ti"><span class="tt">Ringwood CC vs Croydon CC</span><span class="ts">4/187 (42.2 ov)</span><span class="tx">Chasing 224 — need 37 off 48 balls</span></div><div class="ti"><span class="tt">Heathmont CC vs Lilydale CC</span><span class="ts">142 ALL OUT</span><span class="tx">Lilydale need 143 to win</span></div><div class="ti"><span class="tt">Wonga Park CC vs Warranwood CC</span><span class="ts">2/201 (38 ov)</span><span class="tx">Set 265, trailing by 64</span></div><div class="ti"><span class="tt">Kilsyth CC vs Montrose CC</span><span class="ts">156 ALL OUT</span><span class="tx">Montrose yet to bat</span></div><div class="ti"><span class="tt">Div 1 — Coldstream vs Mt Evelyn</span><span class="ts">3/178 (36 ov)</span><span class="tx">Chasing 212, need 34 off 24</span></div></div></div>
+    <div class="ticker-scroll"><div class="ticker-track"><div class="ti"><span class="tg">Premier</span><span class="tt">Ringwood CC vs Croydon CC</span><span class="ts">4/187 (42.2 overs)</span><span class="tx">Chasing 224 — need 37 runs off 48 balls</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Heathmont CC vs Lilydale CC</span><span class="ts">142 all out</span><span class="tx">Lilydale need 143 runs to win</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Wonga Park CC vs Warranwood CC</span><span class="ts">2/201 (38 overs)</span><span class="tx">Set 265 to win, trailing by 64 runs</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Kilsyth CC vs Montrose CC</span><span class="ts">156 all out</span><span class="tx">Montrose yet to bat</span></div><div class="ti"><span class="tg">Division 1</span><span class="tt">Coldstream CC vs Mt Evelyn CC</span><span class="ts">3/178 (36 overs)</span><span class="tx">Chasing 212 — need 34 runs off 24 balls</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Ringwood CC vs Croydon CC</span><span class="ts">4/187 (42.2 overs)</span><span class="tx">Chasing 224 — need 37 runs off 48 balls</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Heathmont CC vs Lilydale CC</span><span class="ts">142 all out</span><span class="tx">Lilydale need 143 runs to win</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Wonga Park CC vs Warranwood CC</span><span class="ts">2/201 (38 overs)</span><span class="tx">Set 265 to win, trailing by 64 runs</span></div><div class="ti"><span class="tg">Premier</span><span class="tt">Kilsyth CC vs Montrose CC</span><span class="ts">156 all out</span><span class="tx">Montrose yet to bat</span></div><div class="ti"><span class="tg">Division 1</span><span class="tt">Coldstream CC vs Mt Evelyn CC</span><span class="ts">3/178 (36 overs)</span><span class="tx">Chasing 212 — need 34 runs off 24 balls</span></div></div></div>
   </div>
 </div>`,
     "sponsor-carousel": `<div class="sc-wrap">
@@ -156,15 +158,15 @@
     </div>
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Competitions</div>
-      <a class="f-link" href="/competition.html">Competition Hub</a><a class="f-link" href="/seniors.html">Seniors</a><a class="f-link" href="/juniors.html">Juniors</a><a class="f-link" href="/womens.html">Women's</a><a class="f-link" href="/veterans.html">Veterans</a><a class="f-link" href="/umpires.html">Umpires</a>
+      <a class="f-link" href="/competition.html">Competition Hub</a><a class="f-link" href="/seniors.html">Seniors</a><a class="f-link" href="/juniors.html">Juniors</a><a class="f-link" href="/womens.html">Women's</a><a class="f-link" href="/veterans.html">Veterans</a>
     </div>
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">Club &amp; Community</div>
-      <a class="f-link" href="/clubs.html">Clubs</a><a class="f-link" href="/news.html">News</a><a class="f-link" href="/honours.html">Honours</a><a class="f-link" href="/sponsors.html">Sponsors &amp; Partners</a>
+      <a class="f-link" href="/clubs.html">Clubs</a><a class="f-link" href="/news.html">News</a><a class="f-link" href="/honours.html">Honours</a><a class="f-link" href="/photos.html">Photos</a><a class="f-link" href="/video.html">Live Video</a><a class="f-link" href="/social.html">Social Media</a><a class="f-link" href="/sponsors.html">Sponsors &amp; Partners</a>
     </div>
     <div>
-      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">About RDCA</div>
-      <a class="f-link" href="/board.html">The Board</a><a class="f-link" href="/committees.html">Committees &amp; Contacts</a><a class="f-link" href="/documents.html">Documents &amp; Forms</a><a class="f-link" href="/child-safety.html">Child Safety</a><a class="f-link" href="/contact.html">Contact</a>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:.8px;color:rgba(255,255,255,.25);margin-bottom:12px;text-transform:uppercase">RDCA</div>
+      <a class="f-link" href="/board.html">The Board</a><a class="f-link" href="/committees.html">Committees &amp; Contacts</a><a class="f-link" href="/umpires.html">Umpires</a><a class="f-link" href="/documents.html">Documents &amp; Forms</a><a class="f-link" href="/child-safety.html">Child Safety</a><a class="f-link" href="/contact.html">Contact</a>
     </div>
   </div>
   <div style="border-top:1px solid rgba(255,255,255,.04);padding:14px 20px">
@@ -187,18 +189,19 @@
     "home": "/index.html", "competitions": "/competition.html", "news": "/news.html",
     "clubs": "/clubs.html", "fixtures": "/competition.html", "results": "/competition.html",
     "ladders": "/competition.html", "stats": "/competition.html", "umpires": "/umpires.html",
-    "representative": "/juniors.html", "contact": "/contact.html",
-    "media": "/photos.html", "photos": "/photos.html", "live video": "/video.html"
+    "representative": "/juniors.html", "contact": "/contact.html", "rdca": "/board.html",
+    "media": "/photos.html", "photos": "/photos.html", "live video": "/video.html",
+    "social media": "/social.html", "social": "/social.html"
   };
   // page key (body[data-page]) -> which nav item to highlight
   var ACTIVEMAP = {
     "home":"home","index":"home",
     "competition":"competitions","juniors":"competitions","seniors":"competitions",
-    "veterans":"competitions","womens":"competitions","umpires":"competitions",
+    "veterans":"competitions","womens":"competitions",
     "clubs":"clubs","news":"news","honours":"honours",
-    "board":"about","committees":"about","documents":"about","sponsors":"about",
-    "child-safety":"about","contact":"about",
-    "photos":"media","video":"media"
+    "board":"rdca","committees":"rdca","documents":"rdca","sponsors":"rdca",
+    "child-safety":"rdca","contact":"rdca","umpires":"rdca",
+    "photos":"media","video":"media","social":"media"
   };
 
   function wireNav() {

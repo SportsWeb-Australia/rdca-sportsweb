@@ -1,7 +1,7 @@
 /* RDCA service worker — bump CACHE to invalidate on deploy.
    Strategy: network-first for page navigations (fresh content, offline fallback to home),
    cache-first for same-origin static assets. Cross-origin requests are left untouched. */
-var CACHE = "rdca-v1";
+var CACHE = "rdca-v2";
 var CORE = [
   "/", "/index.html",
   "/_shared.css", "/_pages.css",

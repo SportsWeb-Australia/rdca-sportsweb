@@ -33,6 +33,7 @@
     clubs: function (sel) {
       var d = D(); var clubs = d.clubs || [];
       function slugDiv(g){ return (g||"other").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,""); }
+      function clubMono(n){ var b=(n||"").replace(/\s*CC$/i,"").trim().split(/\s+/).filter(Boolean); return (b.length>=2 ? b.map(function(w){return w[0];}).join("") : (b[0]||"")).slice(0,3).toUpperCase(); }
       var order=[], groups={};
       clubs.forEach(function(c){ var g=c.grade||"Other"; if(!groups[g]){groups[g]=[];order.push(g);} groups[g].push(c); });
       var navy = "linear-gradient(135deg,var(--navy),var(--navy3))";
@@ -40,9 +41,7 @@
         var grad = (c.colors && c.colors.length>=2) ? ("linear-gradient(135deg,"+c.colors[0]+","+c.colors[1]+")") : navy;
         var band = c.logo
           ? '<img src="' + esc(c.logo) + '" alt="' + esc(c.name) + '">'
-          : ((window.RDCA && window.RDCA.LOGO)
-              ? '<img src="' + window.RDCA.LOGO + '" alt="' + esc(c.name) + '" style="opacity:.96">'
-              : '<span style="color:#fff;font-family:\'Bebas Neue\',sans-serif;font-size:22px;letter-spacing:1px">' + esc(initials(c.name)) + '</span>');
+          : '<span class="club-mono" style="color:' + ((c.colors && c.colors[1]) || '#0d1f3c') + '">' + esc(clubMono(c.name)) + '</span>';
         var href = c.key ? ('/club.html?club=' + encodeURIComponent(c.key)) : '#';
         return '<a class="club-card" href="' + href + '">' +
                  '<div class="club-band" style="background:' + grad + '">' + band + '</div>' +
@@ -119,7 +118,8 @@
                    '</div>' +
                  '</div>';
         }).join("");
-        return '<div class="section-block"><div class="block-hed">' + esc(g.name) + flag(g) + '</div>' +
+        var gid = (g.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+        return '<div class="section-block" id="' + gid + '"><div class="block-hed">' + esc(g.name) + flag(g) + '</div>' +
                (g.note ? '<div class="block-sub">' + esc(g.note) + '</div>' : '') +
                (members ? '<div class="profile-grid">' + members + '</div>' : '') +
                '</div>';
@@ -196,8 +196,8 @@
           ? '<div class="board-av"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div>'
           : '<div class="board-av board-av-init">' + esc(initials(m.name)) + '</div>';
         var c = '';
-        if (m.phone) c += '<a href="tel:' + esc(m.phone.replace(/\s+/g,'')) + '"><i class="ti ti-phone"></i> ' + esc(m.phone) + '</a>';
-        if (m.email) c += '<a href="mailto:' + esc(m.email) + '"><i class="ti ti-mail"></i> ' + esc(m.email) + '</a>';
+        if (m.phone) c += '<a class="bc-link" href="tel:' + esc(m.phone.replace(/\s+/g,'')) + '"><span class="bc-ic"><i class="ti ti-phone"></i></span><span class="bc-val">' + esc(m.phone) + '</span></a>';
+        if (m.email) c += '<a class="bc-link" href="mailto:' + esc(m.email) + '"><span class="bc-ic"><i class="ti ti-mail"></i></span><span class="bc-val">' + esc(m.email) + '</span></a>';
         return '<div class="board-card">' + av +
           '<div class="board-name">' + esc(m.name) + flag(m) + '</div>' +
           '<div class="board-role">' + esc(m.role) + '</div>' +
@@ -227,9 +227,10 @@
     umpires: function (sel) {
       var u = D().umpires || {};
       var html = (u.links || []).map(function (l) {
-        return '<a class="tile" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+        var ext = !!l.external;
+        return '<a class="tile" href="' + esc(l.url) + '"' + (ext ? ' target="_blank" rel="noopener"' : '') + '>' +
                  '<div class="tile-ic"><i class="ti ' + (l.icon || "ti-link") + '"></i></div>' +
-                 '<div><div class="tile-tt">' + esc(l.label) + (l.external ? ' <i class="ti ti-external-link" style="font-size:12px;color:var(--muted)"></i>' : '') + flag(l) + '</div></div></a>';
+                 '<div><div class="tile-tt">' + esc(l.label) + (ext ? ' <i class="ti ti-external-link" style="font-size:12px;color:var(--muted)"></i>' : '') + flag(l) + '</div></div></a>';
       }).join("");
       set(sel, html);
     },

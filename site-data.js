@@ -92,6 +92,29 @@ window.RDCA_DATA = {
       bat:{ M:15, Runs:509, HS:"96", Avg:42.4, SR:88.1, "50s":4, "100s":0 },
       bowl:{ M:15, Wkts:0, Best:"-", Avg:0, Econ:0 }, mock:true }
   ],
+  socialNote:"Live feeds from the RDCA and the wider Victorian and Australian cricket community \u2014 pulled directly from each organisation's official Facebook page.",
+  social:[
+    { key:"rdca", name:"RDCA", tag:"Ringwood & District Cricket Association", fb:"https://www.facebook.com/ringwooddca",
+      links:[
+        {t:"Facebook", u:"https://www.facebook.com/ringwooddca", i:"brand-facebook"},
+        {t:"Website",  u:"https://www.rdca.com",                 i:"world"}
+      ], real:true },
+    { key:"cv", name:"Cricket Victoria", tag:"State governing body \u00b7 Victoria", fb:"https://www.facebook.com/cricketvictoria",
+      links:[
+        {t:"Facebook",  u:"https://www.facebook.com/cricketvictoria",  i:"brand-facebook"},
+        {t:"Instagram", u:"https://www.instagram.com/cricketvictoria", i:"brand-instagram"},
+        {t:"X",         u:"https://x.com/CricketVic",                   i:"brand-x"},
+        {t:"Website",   u:"https://www.cricketvictoria.com.au",         i:"world"}
+      ], real:true },
+    { key:"ca", name:"Cricket Australia", tag:"National governing body", fb:"https://www.facebook.com/cricketcomau",
+      links:[
+        {t:"Facebook",  u:"https://www.facebook.com/cricketcomau",      i:"brand-facebook"},
+        {t:"Instagram", u:"https://www.instagram.com/cricketaustralia", i:"brand-instagram"},
+        {t:"X",         u:"https://x.com/CricketAus",                   i:"brand-x"},
+        {t:"YouTube",   u:"https://www.youtube.com/cricketaustralia",   i:"brand-youtube"},
+        {t:"Website",   u:"https://www.cricket.com.au",                 i:"world"}
+      ], real:true },
+  ],
   clubs: [
     { key:"ringwood",      name:"Ringwood CC",       grade:"Premier Division", logo:null, colors:["#0d2f6b","#0a1f47"], real:true },
     { key:"croydon",       name:"Croydon CC",        grade:"Premier Division", logo:null, colors:["#0a5c2e","#063d1e"], real:true },
@@ -173,11 +196,11 @@ window.RDCA_DATA = {
   umpires: {
     blurb:"Umpiring in the RDCA — get involved, get accredited, and access resources.",
     links:[
-      { label:"About Umpires",            url:"https://www.rdca.com/about-umpires", icon:"ti-info-circle", real:true },
-      { label:"Umpires Committee",        url:"/committees.html", icon:"ti-users", internal:true, real:true },
-      { label:"Become an Umpire",         url:"https://www.rdca.com/become-an-umpire", icon:"ti-user-plus", real:true },
-      { label:"Training",                 url:"https://www.rdca.com/training", icon:"ti-school", real:true },
-      { label:"Umpire Documents",         url:"https://www.rdca.com/umpires-documents", icon:"ti-file-text", real:true },
+      { label:"About Umpires",            url:"/about-umpires.html", icon:"ti-info-circle", internal:true, real:true },
+      { label:"Umpires Committee",        url:"/committees.html#umpires-committee", icon:"ti-users", internal:true, real:true },
+      { label:"Become an Umpire",         url:"/become-an-umpire.html", icon:"ti-user-plus", internal:true, real:true },
+      { label:"Training",                 url:"/umpire-training.html", icon:"ti-school", internal:true, real:true },
+      { label:"Umpire Documents",         url:"/umpire-documents.html", icon:"ti-file-text", internal:true, real:true },
       { label:"Laws of Cricket (MCC)",    url:"https://www.lords.org/mcc/the-laws-of-cricket", icon:"ti-book", real:true, external:true },
       { label:"Umpire (re)Accreditation", url:"https://www.cricketvictoria.com.au/umpiring/level-two-umpire-accreditation/", icon:"ti-certificate", real:true, external:true }
     ]
