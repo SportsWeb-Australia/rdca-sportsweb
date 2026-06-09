@@ -257,6 +257,10 @@ window.RDCA_DATA = {
     { title:"MyCricket Results Entry Guide", cat:"Veterans", url:"https://www.rdca.com/_files/ugd/c846e3_7a6d5730dbc94944bdd8256f31bc8ba2.pdf", type:"pdf", icon:"ti-file-text", real:true },
     { title:"Team Nomination Form", cat:"Veterans",         url:"https://www.rdca.com/_files/ugd/bad3dd_ff323a6c498c495692aee01743d6d570.docx?dn=RDCA%20Over%2040s%20Big%20Bash%207%20Team%20Nomination%20form%202026.docx", type:"doc", icon:"ti-file-text", real:true },
     { title:"Business Continuity Plan", cat:"Veterans",     url:"https://www.rdca.com/_files/ugd/c846e3_bd2f9385d4ef401ea4fddfa35c5c1445.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Club Questionaire", cat:"Veterans",            url:"https://www.rdca.com/_files/ugd/c846e3_3abc462ec3084e199e845ac0766e7b5a.doc?dn=rdca_Insurance_Questionaire.doc", type:"doc", icon:"ti-file-text", real:true },
+    { title:"Cricket Ball Order Form 2024/25", cat:"Veterans", url:"https://www.rdca.com/_files/ugd/5d13eb_3e2a22b3f51f4f8a88d6d6b43e5d1c9a.docx?dn=CRICKET%20BALL%20ORDER%20FORM%202024-25%20.docx", type:"doc", icon:"ti-file-text", real:true },
+    { title:"Ball Ordering Instructions", cat:"Veterans",   url:"https://www.rdca.com/_files/ugd/5d13eb_c7b3d20837664ca0a944321f72b01171.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"RDCA Constitution 2021/22", cat:"Veterans",    url:"https://www.rdca.com/_files/ugd/93eb8a_bd9553ab5f894123813939041e0ab0ff.pdf", type:"pdf", icon:"ti-file-text", real:true },
     // Women's — real files from rdca.com/copy-of-documents (RDCA Women's East)
     { title:"Women's East Rules 2025/26", cat:"Women's",        url:"https://www.rdca.com/_files/ugd/5d13eb_f761d7028cb34ed6a80ed7c314ab3c4f.pdf", type:"pdf", icon:"ti-file-text", real:true },
     { title:"Discipline & Protests Framework 2025/26", cat:"Women's", url:"https://www.rdca.com/_files/ugd/5d13eb_b3305ed8bc68421bb3427d9ea786205d.pdf", type:"pdf", icon:"ti-file-text", real:true },
@@ -271,6 +275,9 @@ window.RDCA_DATA = {
     { title:"Children & Young People Policy", cat:"Women's",    url:"https://www.rdca.com/_files/ugd/5d13eb_50ec172962db450a85ac926f9f1ce71e.pdf", type:"pdf", icon:"ti-shield-check", real:true },
     { title:"Looking After Our Kids", cat:"Women's",            url:"https://www.rdca.com/_files/ugd/5d13eb_8fc85fe2be194b16aeae2526d5955372.pdf", type:"pdf", icon:"ti-shield-check", real:true },
     { title:"Action Plan — Commitment Statement", cat:"Women's", url:"https://www.rdca.com/_files/ugd/5d13eb_aed92464d2e5486594b707c9707ea38b.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Ball Ordering Instructions", cat:"Women's",       url:"https://www.rdca.com/_files/ugd/5d13eb_c7b3d20837664ca0a944321f72b01171.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Business Continuity Plan", cat:"Women's",         url:"https://www.rdca.com/_files/ugd/c846e3_7a9d4dfb5bac4134932b34845795a179.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"RDCA Constitution 2021/22", cat:"Women's",        url:"https://www.rdca.com/_files/ugd/93eb8a_bd9553ab5f894123813939041e0ab0ff.pdf", type:"pdf", icon:"ti-file-text", real:true },
     // Section document hubs — open the current pages on rdca.com (sections without an inline tab)
     { title:"Junior Documents", cat:"By Section",   url:"https://www.rdca.com/juniors-documents",  type:"hub", icon:"ti-folder", real:true },
     { title:"Seniors Documents", cat:"By Section",  url:"https://www.rdca.com/seniors-documents",  type:"hub", icon:"ti-folder", real:true },
