@@ -97,6 +97,7 @@ window.RDCA_DATA = {
     { key:"rdca", name:"RDCA", tag:"Ringwood & District Cricket Association", fb:"https://www.facebook.com/ringwooddca",
       links:[
         {t:"Facebook", u:"https://www.facebook.com/ringwooddca", i:"brand-facebook"},
+        {t:"Instagram", u:"https://www.instagram.com/rdca6519", i:"brand-instagram"},
         {t:"Website",  u:"https://www.rdca.com",                 i:"world"}
       ], real:true },
     { key:"cv", name:"Cricket Victoria", tag:"State governing body \u00b7 Victoria", fb:"https://www.facebook.com/cricketvictoria",
@@ -116,18 +117,44 @@ window.RDCA_DATA = {
       ], real:true },
   ],
   clubs: [
-    { key:"ringwood",      name:"Ringwood CC",       grade:"Premier Division", logo:null, colors:["#0d2f6b","#0a1f47"], real:true },
-    { key:"croydon",       name:"Croydon CC",        grade:"Premier Division", logo:null, colors:["#0a5c2e","#063d1e"], real:true },
+    { key:"ringwood",      name:"Ringwood CC",       grade:"Premier Division", logo:"/logos/ringwood.webp", colors:["#9aa1a8","#2b2f36"], real:true },
+    { key:"croydon",       name:"Croydon CC",        grade:"Premier Division", logo:"/logos/croydon.webp", colors:["#f2c200","#1a1a1a"], real:true },
     { key:"heathmont",     name:"Heathmont CC",      grade:"Premier Division", logo:null, colors:["#7a1020","#4d0a14"], real:true },
-    { key:"wongapark",     name:"Wonga Park CC",     grade:"Premier Division", logo:null, colors:["#0a5e5e","#063d3d"], real:true },
-    { key:"kilsyth",       name:"Kilsyth CC",        grade:"Division 1",       logo:null, colors:["#13366b","#0a1f44"], real:true },
-    { key:"lilydale",      name:"Lilydale CC",       grade:"Division 1",       logo:null, colors:["#4a1d6b","#2f1247"], real:true },
-    { key:"warranwood",    name:"Warranwood CC",     grade:"Division 1",       logo:null, colors:["#a8521a","#6e3410"], real:true },
-    { key:"montrose",      name:"Montrose CC",       grade:"Division 1",       logo:null, colors:["#1f5c2e","#123d1d"], real:true },
-    { key:"coldstream",    name:"Coldstream CC",     grade:"Division 2",       logo:null, colors:["#334155","#1e293b"], real:true },
-    { key:"mtevelyn",      name:"Mt Evelyn CC",      grade:"Division 2",       logo:null, colors:["#7a1530","#4d0d1f"], real:true },
-    { key:"chirnsidepark", name:"Chirnside Park CC", grade:"Division 2",       logo:null, colors:["#1e3a8a","#152a63"], real:true },
-    { key:"mooroolbark",   name:"Mooroolbark CC",    grade:"Division 2",       logo:null, colors:["#0e5f8a","#093f5c"], real:true }
+    { key:"wongapark",     name:"Wonga Park CC",     grade:"Premier Division", logo:"/logos/wongapark.webp", colors:["#7c3fa1","#27b6c7"], real:true },
+    { key:"kilsyth",       name:"Kilsyth CC",        grade:"Division 1",       logo:"/logos/kilsyth.webp", colors:["#c8102e","#1a1a1a"], real:true },
+    { key:"lilydale",      name:"Lilydale CC",       grade:"Division 1",       logo:"/logos/lilydale.webp", colors:["#2f63c6","#15306b"], real:true },
+    { key:"warranwood",    name:"Warranwood CC",     grade:"Division 1",       logo:"/logos/warranwood.webp", colors:["#2f5aa8","#16306b"], real:true },
+    { key:"montrose",      name:"Montrose CC",       grade:"Division 1",       logo:"/logos/montrose.webp", colors:["#6b7178","#1e9fc4"], real:true },
+    { key:"coldstream",    name:"Coldstream CC",     grade:"Division 2",       logo:"/logos/coldstream.webp", colors:["#5fb52b","#2c6e17"], real:true },
+    { key:"mtevelyn",      name:"Mt Evelyn CC",      grade:"Division 2",       logo:"/logos/mtevelyn.webp", colors:["#3aa0d8","#1b2730"], real:true },
+    { key:"chirnsidepark", name:"Chirnside Park CC", grade:"Division 2",       logo:"/logos/chirnsidepark.webp", colors:["#2f6fc6","#15224a"], real:true },
+    { key:"mooroolbark",   name:"Mooroolbark CC",    grade:"Division 2",       logo:"/logos/mooroolbark.webp", colors:["#202740","#b11722"], real:true },
+    { key:"seville", name:"Seville CC", grade:"Premier Division", logo:"/logos/seville.webp", colors:["#9aa1a8","#3a3f45"], real:true },
+    { key:"healesville", name:"Healesville CC", grade:"Premier Division", logo:"/logos/healesville.webp", colors:["#f4761b","#d51f12"], real:true },
+    { key:"warrandyte", name:"Warrandyte CC", grade:"Division 1", logo:"/logos/warrandyte.webp", colors:["#c39a3b","#9e1b22"], real:true },
+    { key:"norwood", name:"Norwood CC", grade:"Division 1", logo:"/logos/norwood.webp", colors:["#caa23a","#8a5a20"], real:true },
+    { key:"templeton", name:"Templeton CC", grade:"Division 2", logo:"/logos/templeton.webp", colors:["#2f8a3e","#33383d"], real:true },
+    { key:"croydonnorth", name:"Croydon North CC", grade:"Division 2", logo:"/logos/croydonnorth.webp", colors:["#8b9298","#c8102e"], real:true },
+    { key:"wantirnasouth", name:"Wantirna South CC", grade:"Division 3", logo:"/logos/wantirnasouth.webp", colors:["#d51f23","#1a1a1a"], real:true },
+    { key:"powelltown", name:"Powelltown CC", grade:"Division 3", logo:"/logos/powelltown.webp", colors:["#c8202a","#1a1a1a"], real:true },
+    { key:"hoddlescreek", name:"Hoddles Creek CC", grade:"Division 3", logo:"/logos/hoddlescreek.webp", colors:["#7a5a2e","#202c45"], real:true },
+    { key:"ainsliepark", name:"Ainslie Park CC", grade:"Division 3", logo:"/logos/ainsliepark.webp", colors:["#1f7a3a","#172419"], real:true },
+    { key:"standrews", name:"St Andrews CC", grade:"Division 3", logo:"/logos/standrews.webp", colors:["#c8a23a","#1a1a1a"], real:true },
+    { key:"boronia", name:"Boronia CC", grade:"Division 3", logo:"/logos/boronia.webp", colors:["#caa23a","#1a1a1a"], real:true },
+    { key:"launchingplace", name:"Launching Place CC", grade:"Division 4", logo:"/logos/launchingplace.webp", colors:["#cc2222","#5a626b"], real:true },
+    { key:"heathwood", name:"Heathwood CC", grade:"Division 4", logo:"/logos/heathwood.webp", colors:["#e8821e","#2a2018"], real:true },
+    { key:"southwarrandyte", name:"South Warrandyte CC", grade:"Division 4", logo:"/logos/southwarrandyte.webp", colors:["#8b9298","#caa23a"], real:true },
+    { key:"bayswater", name:"Bayswater CC", grade:"Division 4", logo:"/logos/bayswater.webp", colors:["#2f8bd6","#16306b"], real:true },
+    { key:"wantirna", name:"Wantirna CC", grade:"Division 4", logo:"/logos/wantirna.webp", colors:["#8b9298","#cf3a1f"], real:true },
+    { key:"yarrajunction", name:"Yarra Junction CC", grade:"Division 4", logo:"/logos/yarrajunction.webp", colors:["#aeb4ba","#2b2f36"], real:true },
+    { key:"eastringwood", name:"East Ringwood CC", grade:"Division 4", logo:"/logos/eastringwood.webp", colors:["#ef7d12","#3a3f45"], real:true },
+    { key:"yarraglen", name:"Yarra Glen CC", grade:"Division 5", logo:"/logos/yarraglen.webp", colors:["#cc2222","#3a3f45"], real:true },
+    { key:"wooriyallock", name:"Woori Yallock CC", grade:"Division 5", logo:"/logos/wooriyallock.webp", colors:["#f2c200","#1a1a1a"], real:true },
+    { key:"northringwood", name:"North Ringwood CC", grade:"Division 5", logo:"/logos/northringwood.webp", colors:["#d11f23","#2b2f36"], real:true },
+    { key:"eastfield", name:"Eastfield CC", grade:"Division 5", logo:"/logos/eastfield.webp", colors:["#aeb4ba","#2b2f36"], real:true },
+    { key:"southcroydon", name:"South Croydon CC", grade:"Division 5", logo:"/logos/southcroydon.webp", colors:["#1f9aa8","#0f5a63"], real:true },
+    { key:"croydonranges", name:"Croydon Ranges CC", grade:"Division 5", logo:"/logos/croydonranges.webp", colors:["#8b9298","#1f2740"], real:true },
+    { key:"wandin", name:"Wandin CC", grade:"Division 5", logo:"/logos/wandin.webp", colors:["#3a6ea5","#16243f"], real:true }
   ],
 
   /* ==========================================================================
@@ -144,7 +171,7 @@ window.RDCA_DATA = {
       playhqKey:"juniors",
       aboutText:"<p>RDCA junior cricket caters for boys and girls across a range of age groups, from entry-level formats through to under-17s. Alongside weekly club fixtures, the Association runs representative (rep) team pathways that give talented juniors the chance to test themselves against the best in the region.</p>",
       conduct:{ summary:"<p>Junior matches are played in the true spirit of cricket, with an emphasis on safety, enjoyment and good sportsmanship. The Code of Conduct sets out what is expected of players, coaches, parents and spectators &mdash; respect for umpires and opponents, fair play, and zero tolerance for abuse or discrimination &mdash; and works alongside the Association&rsquo;s child safety commitments.</p>", url:"https://www.rdca.com/juniors-code-of-conduct" },
-      committee:{ label:"Junior Committee", url:"/committees.html", internal:true, real:true },
+      committee:{ label:"Junior Committee", url:"/committees.html#junior-committee", internal:true, real:true },
       documents:{ label:"Junior Documents", url:"https://www.rdca.com/juniors-documents", real:true },
       codeOfConduct:{ label:"Junior Code of Conduct", url:"https://www.rdca.com/juniors-code-of-conduct", real:true },
       repTeams:[
@@ -163,7 +190,7 @@ window.RDCA_DATA = {
       playhqKey:"seniors",
       aboutText:"<p>Senior cricket is the heart of the RDCA &mdash; the traditional Saturday competition contested across multiple grades, from Premier Division through the lower divisions. Clubs field teams to suit players of every standard, from those chasing premierships to weekend social cricketers.</p>",
       conduct:{ summary:"<p>RDCA matches are played in the true spirit of cricket. The Code of Conduct &mdash; based on the Victorian Metropolitan Cricket Union (VMCU) code &mdash; sets out the standards of behaviour expected of players, club officials, coaches and spectators: respect for umpires and opponents, fair play, and zero tolerance for abuse, intimidation or discrimination. Serious or repeated breaches can lead to reports and suspensions.</p>", url:"https://www.rdca.com/seniors-code-of-conduct" },
-      committee:{ label:"Senior Committee", url:"/committees.html", internal:true, real:true },
+      committee:{ label:"Senior Committee", url:"/committees.html#senior-committee", internal:true, real:true },
       documents:{ label:"Seniors Documents", url:"https://www.rdca.com/seniors-documents", real:true },
       codeOfConduct:{ label:"Senior Code of Conduct", url:"https://www.rdca.com/seniors-code-of-conduct", real:true },
       links:[ { label:"Suspended Players", url:"https://www.rdca.com/suspended-players", real:true } ]
@@ -175,7 +202,7 @@ window.RDCA_DATA = {
       aboutText:"<p>RDCA Veterans cricket is an Over-40s Big Bash &mdash; a relaxed Twenty20 format for players who want to keep enjoying the game in their later cricketing years. Teams nominate each season, and players of all backgrounds are welcome.</p><p style='margin-top:10px'><em>The Veterans&rsquo; motto: &ldquo;Strive to do your best, never give up and treat people with respect.&rdquo;</em></p><p style='margin-top:10px'>To get involved, speak to your club or call Peter Chamings on <a href='tel:+61419693097'>0419 693 097</a>. Forms: <a href='https://www.rdca.com/_files/ugd/bad3dd_ff323a6c498c495692aee01743d6d570.docx?dn=RDCA%20Over%2040s%20Big%20Bash%207%20Team%20Nomination%20form%202026.docx' target='_blank' rel='noopener'>Team Nomination (2026)</a> &middot; <a href='https://www.rdca.com/_files/ugd/bad3dd_bdb67564cd4347b49a516f68f16879f8.docx?dn=RDCA%20Big%20Bash%20Veterans%20T20%20Rules%202026.docx' target='_blank' rel='noopener'>Big Bash T20 Rules (2026)</a>.</p>",
       conduct:{ summary:"<p>Veterans cricket is played in great spirit, true to the section&rsquo;s motto. The Code of Conduct sets out the behaviour expected of all participants &mdash; respect for opponents and officials, fair play, and no abuse, intimidation or discrimination.</p>", url:"https://www.rdca.com/veterans-code-of-conduct" },
       about:{ label:"About Veterans", url:"https://www.rdca.com/about-veterans", real:true },
-      committee:{ label:"Veterans Committee", url:"/committees.html", internal:true, real:true },
+      committee:{ label:"Veterans Committee", url:"/committees.html#veterans-committee", internal:true, real:true },
       documents:{ label:"Veterans Documents", url:"https://www.rdca.com/veterans-documents", real:true },
       codeOfConduct:{ label:"Veterans Code of Conduct", url:"https://www.rdca.com/veterans-code-of-conduct", real:true }
     },
@@ -184,8 +211,8 @@ window.RDCA_DATA = {
       blurb:"Women's cricket in the RDCA, played in the East competition.",
       playhqKey:"womens",
       aboutText:"<p>Women&rsquo;s cricket in the RDCA is played in the East competition, offering a welcoming and competitive environment for women and girls to take up or continue playing. New players of all experience levels are encouraged to get involved through their local club.</p>",
-      committee:{ label:"Women's Committee", url:"/committees.html", internal:true, real:true },
-      documents:{ label:"Women's Documents", url:"https://www.rdca.com/copy-of-documents", real:true, needsReview:true }
+      committee:{ label:"Women's Committee", url:"/committees.html#women-s-committee", internal:true, real:true },
+      documents:{ label:"Women's Documents", url:"https://www.rdca.com/copy-of-documents", real:true }
     }
   },
 
@@ -214,17 +241,41 @@ window.RDCA_DATA = {
      ========================================================================== */
   documents: [
     // Key forms / rules / policies — direct files on rdca.com (live; no upload needed)
-    { title:"Registration Form",              url:"https://www.rdca.com/_files/ugd/c846e3_7ca10e17623b49e8ad0a6e9e4b08f6c3.pdf", type:"pdf", icon:"ti-file-text", real:true },
-    { title:"Senior Rules 2026-27",           url:"https://www.rdca.com/_files/ugd/5d13eb_213140ec8e044fe589d6a95ab6b7af43.pdf", type:"pdf", icon:"ti-file-text", real:true },
-    { title:"Adverse Weather Policy 2026-27", url:"https://www.rdca.com/_files/ugd/5d13eb_5e0a952f27094f01815aa4c57eb5171a.pdf", type:"pdf", icon:"ti-file-text", real:true },
-    { title:"Clearances & Transfers Guide",   url:"https://www.rdca.com/_files/ugd/c846e3_2337caa1f5584ee99832599a9812cdf3.pdf", type:"pdf", icon:"ti-file-text", real:true },
-    // Section document hubs — open the current pages on rdca.com
-    { title:"Junior Documents",   url:"https://www.rdca.com/juniors-documents",  type:"hub", icon:"ti-folder", real:true },
-    { title:"Seniors Documents",  url:"https://www.rdca.com/seniors-documents",  type:"hub", icon:"ti-folder", real:true },
-    { title:"Veterans Documents", url:"https://www.rdca.com/veterans-documents", type:"hub", icon:"ti-folder", real:true },
-    { title:"Women's Documents",  url:"https://www.rdca.com/copy-of-documents",  type:"hub", icon:"ti-folder", real:true, needsReview:true },
-    { title:"Umpire Documents",   url:"https://www.rdca.com/umpires-documents",  type:"hub", icon:"ti-folder", real:true },
-    { title:"Safe Cricket / Child Safety Policy", url:"https://www.rdca.com/child-safety", type:"hub", icon:"ti-shield-check", real:true }
+    { title:"Registration Form", cat:"Forms & Rules",              url:"https://www.rdca.com/_files/ugd/c846e3_7ca10e17623b49e8ad0a6e9e4b08f6c3.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Senior Rules 2026-27", cat:"Forms & Rules",           url:"https://www.rdca.com/_files/ugd/5d13eb_213140ec8e044fe589d6a95ab6b7af43.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Adverse Weather Policy 2026-27", cat:"Forms & Rules", url:"https://www.rdca.com/_files/ugd/5d13eb_5e0a952f27094f01815aa4c57eb5171a.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Clearances & Transfers Guide", cat:"Forms & Rules",   url:"https://www.rdca.com/_files/ugd/c846e3_2337caa1f5584ee99832599a9812cdf3.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    // Veterans — real files from rdca.com/veterans-documents
+    { title:"Veterans Rules", cat:"Veterans",               url:"https://www.rdca.com/_files/ugd/c846e3_aab45fab5ef74cf2aae47e6b5b66bdc7.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Big Bash (Over 40s T20) Rules 2026", cat:"Veterans", url:"https://www.rdca.com/_files/ugd/bad3dd_bdb67564cd4347b49a516f68f16879f8.docx?dn=RDCA%20Big%20Bash%20Veterans%20T20%20Rules%202026.docx", type:"doc", icon:"ti-file-text", real:true },
+    { title:"Extreme Conditions Policy", cat:"Veterans",    url:"https://www.rdca.com/_files/ugd/c846e3_9c33b8f940324a8ab989d56220d4d6a6.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Member Protection By Law", cat:"Veterans",     url:"https://www.rdca.com/_files/ugd/c846e3_0a2aae2dc6d949109796cb2c9c333793.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Member Protection Policy", cat:"Veterans",     url:"https://www.rdca.com/_files/ugd/c846e3_a8fd9209cf6541a5968832c02220cf6a.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Clearances & Transfers Guide", cat:"Veterans", url:"https://www.rdca.com/_files/ugd/c846e3_2337caa1f5584ee99832599a9812cdf3.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Personal Accident Claim Form", cat:"Veterans", url:"https://www.rdca.com/_files/ugd/c846e3_274cf01dc51a4dd994e3a3652c7fb04c.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Game Day Checklist", cat:"Veterans",           url:"https://www.rdca.com/_files/ugd/c846e3_110a01d5affe459f9780aaddddde7d78.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"MyCricket Results Entry Guide", cat:"Veterans", url:"https://www.rdca.com/_files/ugd/c846e3_7a6d5730dbc94944bdd8256f31bc8ba2.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Team Nomination Form", cat:"Veterans",         url:"https://www.rdca.com/_files/ugd/bad3dd_ff323a6c498c495692aee01743d6d570.docx?dn=RDCA%20Over%2040s%20Big%20Bash%207%20Team%20Nomination%20form%202026.docx", type:"doc", icon:"ti-file-text", real:true },
+    { title:"Business Continuity Plan", cat:"Veterans",     url:"https://www.rdca.com/_files/ugd/c846e3_bd2f9385d4ef401ea4fddfa35c5c1445.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    // Women's — real files from rdca.com/copy-of-documents (RDCA Women's East)
+    { title:"Women's East Rules 2025/26", cat:"Women's",        url:"https://www.rdca.com/_files/ugd/5d13eb_f761d7028cb34ed6a80ed7c314ab3c4f.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Discipline & Protests Framework 2025/26", cat:"Women's", url:"https://www.rdca.com/_files/ugd/5d13eb_b3305ed8bc68421bb3427d9ea786205d.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Code of Conduct — Captains 2025/26", cat:"Women's", url:"https://www.rdca.com/_files/ugd/23872a_dd49cc301761453e9b8f9568a2f94e01.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Code of Conduct — Players 2025/26", cat:"Women's",  url:"https://www.rdca.com/_files/ugd/23872a_b2a5fd52c19d4d6b914086e876204765.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Member Protection By Law", cat:"Women's",          url:"https://www.rdca.com/_files/ugd/c846e3_4916c09b103f4a52b94ca2f554d2b540.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Member Protection Policy", cat:"Women's",          url:"https://www.rdca.com/_files/ugd/c846e3_a8fd9209cf6541a5968832c02220cf6a.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Registration Form", cat:"Women's",                 url:"https://www.rdca.com/_files/ugd/c846e3_7ca10e17623b49e8ad0a6e9e4b08f6c3.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Clearances & Transfers Guide", cat:"Women's",      url:"https://www.rdca.com/_files/ugd/c846e3_2337caa1f5584ee99832599a9812cdf3.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"MyCricket Results Entry Guide", cat:"Women's",     url:"https://www.rdca.com/_files/ugd/c846e3_7a6d5730dbc94944bdd8256f31bc8ba2.pdf", type:"pdf", icon:"ti-file-text", real:true },
+    { title:"Cricket Ball Order Form 2025/26", cat:"Women's",   url:"https://www.rdca.com/_files/ugd/5d13eb_56cb020fd62c47f8aa1595960fbedea7.docx?dn=CRICKET%20BALL%20ORDER%20FORM%202025-26%20.docx", type:"doc", icon:"ti-file-text", real:true },
+    { title:"Children & Young People Policy", cat:"Women's",    url:"https://www.rdca.com/_files/ugd/5d13eb_50ec172962db450a85ac926f9f1ce71e.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Looking After Our Kids", cat:"Women's",            url:"https://www.rdca.com/_files/ugd/5d13eb_8fc85fe2be194b16aeae2526d5955372.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    { title:"Action Plan — Commitment Statement", cat:"Women's", url:"https://www.rdca.com/_files/ugd/5d13eb_aed92464d2e5486594b707c9707ea38b.pdf", type:"pdf", icon:"ti-shield-check", real:true },
+    // Section document hubs — open the current pages on rdca.com (sections without an inline tab)
+    { title:"Junior Documents", cat:"By Section",   url:"https://www.rdca.com/juniors-documents",  type:"hub", icon:"ti-folder", real:true },
+    { title:"Seniors Documents", cat:"By Section",  url:"https://www.rdca.com/seniors-documents",  type:"hub", icon:"ti-folder", real:true },
+    { title:"Umpire Documents", cat:"By Section",   url:"https://www.rdca.com/umpires-documents",  type:"hub", icon:"ti-folder", real:true },
+    { title:"Safe Cricket / Child Safety Policy", cat:"Child Safety", url:"https://www.rdca.com/child-safety", type:"hub", icon:"ti-shield-check", real:true }
   ],
 
   /* ==========================================================================
@@ -397,6 +448,14 @@ window.RDCA_DATA = {
     { title:"Representative squads announced", date:"2026-08-20", cat:"Representative", excerpt:"Junior representative squads have been named ahead of the carnival season.", url:"#", sample:true },
     { title:"Umpire accreditation course dates", date:"2026-08-10", cat:"Umpires", excerpt:"Upcoming Level 1 and Level 2 umpire accreditation sessions across the east.", url:"#", sample:true }
   ],
+  newsArchive: [
+    { title:"Grand Final wrap: Premier Division decided in a thriller", cat:"Finals",         date:"Apr 2025", url:"https://www.rdca.com", sample:true },
+    { title:"RDCA representative squads announced for 2024/25",         cat:"Representative", date:"Nov 2024", url:"https://www.rdca.com", sample:true },
+    { title:"Life Membership awarded at annual presentation night",     cat:"Association",    date:"May 2024", url:"https://www.rdca.com", sample:true },
+    { title:"Junior Blast program returns for summer",                  cat:"Juniors",        date:"Oct 2024", url:"https://www.rdca.com", sample:true },
+    { title:"Umpire panel expands ahead of the new season",             cat:"Umpires",        date:"Sep 2024", url:"https://www.rdca.com", sample:true },
+    { title:"Women's competition grows to record numbers",              cat:"Women's",        date:"Aug 2024", url:"https://www.rdca.com", sample:true }
+  ],
 
   /* ==========================================================================
      HONOURS / RECORDS  — SAMPLE rows for layout. Replace with real honour board.
@@ -429,5 +488,43 @@ window.RDCA_DATA = {
       { label:"Awards",             url:"https://www.rdca.com/awards",        icon:"ti-medal",          note:"Season award winners",      external:true, real:true },
       { label:"Premiership Photos", url:"https://www.rdca.com/photos",        icon:"ti-photo",          note:"Photo galleries",           external:true, real:true }
     ]
-  }
+  },
+  events: [
+    {
+      slug:"awards-night", day:"28", month:"JAN", dateLabel:"Saturday 28 January 2027",
+      time:"6:30 PM \u2013 11:00 PM", category:"Association Event",
+      title:"RDCA Annual Awards Night", venue:"Ringwood Function Centre", address:"Ringwood, Victoria",
+      image:"https://res.cloudinary.com/dozdbhjhs/image/upload/v1780761368/480425379_9162514167130775_2819874434032542497_n_o6gikt.jpg",
+      summary:"The Association's night of nights \u2014 celebrating the season's standout players, clubs and volunteers across every RDCA grade.",
+      details:[
+        "Join us for the RDCA Annual Awards Night, where we recognise the best of the season across senior, junior, women's and veterans cricket. The evening includes presentation of the batting, bowling and all-rounder awards for each grade, along with club champion and volunteer recognition.",
+        "Tickets are arranged through clubs. Tables of ten are available, and clubs are encouraged to book early as the night sells out most seasons. Dress is smart/cocktail."
+      ],
+      sample:true
+    },
+    {
+      slug:"secretary-forum", day:"31", month:"JAN", dateLabel:"Friday 31 January 2027",
+      time:"7:00 PM \u2013 8:30 PM", category:"Administration",
+      title:"Club Secretary Forum", venue:"RDCA Offices, Ringwood", address:"Ringwood, Victoria",
+      image:"https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=1200&q=80&auto=format&fit=crop",
+      summary:"A working session for club secretaries covering finals procedures, registrations and end-of-season administration.",
+      details:[
+        "This forum walks club secretaries through the back half of the season: finals eligibility and paperwork, PlayHQ administration, transfers, and key reporting dates. It is a good chance to raise questions directly with the Board and Operations team.",
+        "One representative per club is requested. An agenda and supporting documents are circulated to club contacts in the week prior."
+      ],
+      sample:true
+    },
+    {
+      slug:"premier-finals", day:"14", month:"FEB", dateLabel:"Saturday 14 February 2027",
+      time:"From 10:00 AM", category:"Finals Cricket",
+      title:"RDCA Premier Division Finals", venue:"Ringwood Reserve", address:"Ringwood, Victoria",
+      image:"https://images.unsplash.com/photo-1512719994953-eabf50895df7?w=1200&q=80&auto=format&fit=crop",
+      summary:"The blue-riband fixture of the RDCA season \u2014 the Premier Division Grand Final at Ringwood Reserve.",
+      details:[
+        "The top two Premier Division sides meet across the two-day Grand Final for the Association's premier senior title. Entry is free and all cricket supporters are welcome \u2014 canteen and bar facilities operate across both days.",
+        "Live scoring is available via PlayHQ. Play begins at 10:00 AM on day one; refer to the competition hub closer to the date for the latest start times and any weather updates."
+      ],
+      sample:true
+    }
+  ]
 };

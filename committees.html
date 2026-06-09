@@ -5,6 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Committees &amp; Contacts — RDCA</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -42,6 +44,7 @@
 
 <script src="/site-data.js"></script>
 <script src="/rdca-render.js"></script>
-<script>RDCA.render.committees("#committees-mount");</script>
+<script>RDCA.render.committees("#committees-mount");
+(function(){function go(){var h=location.hash;if(h&&h.length>1){var el=document.getElementById(decodeURIComponent(h.slice(1)));if(el)el.scrollIntoView();}}go();window.addEventListener("hashchange",go);})();</script>
 </body>
 </html>

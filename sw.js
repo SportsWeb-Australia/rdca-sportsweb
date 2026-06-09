@@ -1,12 +1,12 @@
 /* RDCA service worker — bump CACHE to invalidate on deploy.
    Strategy: network-first for page navigations (fresh content, offline fallback to home),
    cache-first for same-origin static assets. Cross-origin requests are left untouched. */
-var CACHE = "rdca-v2";
+var CACHE = "rdca-v8";
 var CORE = [
   "/", "/index.html",
   "/_shared.css", "/_pages.css",
   "/rdca-components.js", "/rdca-render.js", "/site-data.js", "/playhq.js", "/pwa.js",
-  "/rdca-logo.png", "/icon-192.png", "/icon-512.png", "/manifest.webmanifest"
+  "/rdca-logo.png", "/favicon.ico", "/favicon-32.png", "/icon-192.png", "/icon-512.png", "/manifest.webmanifest"
 ];
 
 self.addEventListener("install", function (e) {

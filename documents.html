@@ -5,6 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Documents, Policies &amp; Forms — RDCA</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -35,8 +37,8 @@
 <div class="page-wrap">
   <div class="section-block">
     <div class="block-hed">Documents &amp; Downloads</div>
-    <div class="block-sub">Forms, rules and policies for RDCA clubs, players and officials.</div>
-    <div class="doc-list" id="docs-mount"></div>
+    <div class="block-sub">Forms, rules and policies for RDCA clubs, players and officials &mdash; choose a folder below.</div>
+    <div id="docs-mount"></div>
   </div>
 
 </div>
@@ -46,6 +48,15 @@
 
 <script src="/site-data.js"></script>
 <script src="/rdca-render.js"></script>
-<script>RDCA.render.documents("#docs-mount");</script>
+<script>RDCA.render.documents("#docs-mount");
+  (function(){
+    var f=document.querySelector(".folder-tabs"); if(!f) return;
+    f.addEventListener("click",function(e){
+      var b=e.target.closest(".folder-tab"); if(!b) return;
+      var k=b.getAttribute("data-fld");
+      document.querySelectorAll(".folder-tab").forEach(function(t){t.classList.toggle("active",t===b);});
+      document.querySelectorAll(".folder-pane").forEach(function(p){p.classList.toggle("active",p.id==="fld-"+k);});
+    });
+  })();</script>
 </body>
 </html>

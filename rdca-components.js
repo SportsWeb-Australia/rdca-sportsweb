@@ -33,7 +33,7 @@
   <div style="display:flex;align-items:center;gap:18px">
     <div class="tb-item"><i class="ti ti-map-pin"></i> Ringwood, Victoria</div>
     <div class="tb-item"><i class="ti ti-mail"></i> admin@rdca.com.au</div>
-    <div class="tb-item"><i class="ti ti-phone"></i> (03) 9870 0000</div>
+    <div class="tb-item"><i class="ti ti-phone"></i> 1300 732 200</div>
   </div>
   <div style="display:flex;align-items:center;gap:12px">
     <div class="t-soc">
@@ -172,7 +172,7 @@
   <div style="border-top:1px solid rgba(255,255,255,.04);padding:14px 20px">
     <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <div style="font-size:11px;color:rgba(255,255,255,.22)">&copy; 2026 Ringwood &amp; District Cricket Association. All rights reserved.</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.22)">Powered by <span style="color:rgba(204,34,34,.5)">SportsWeb One</span></div>
+      <div style="font-size:11px;color:rgba(255,255,255,.22)">Powered by <a href="https://sportsweb.com.au" target="_blank" rel="noopener" style="color:rgba(204,34,34,.5);text-decoration:none">SportsWeb One</a></div>
     </div>
   </div>
 </footer>`

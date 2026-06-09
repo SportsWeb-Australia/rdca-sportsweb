@@ -88,7 +88,8 @@
 
     // ---- documents / downloads ----
     documents: function (sel) {
-      var html = (D().documents || []).map(function (doc) {
+      var docs = D().documents || [];
+      function row(doc){
         var ic = doc.icon || "ti-file-text";
         var act = doc.type === "pdf" ? "ti-download" : "ti-external-link";
         return '<a class="doc-item" href="' + esc(doc.url) + '"' + (doc.url !== "#" ? ' target="_blank" rel="noopener"' : '') + '>' +
@@ -96,8 +97,17 @@
                  '<div><div class="doc-tt">' + esc(doc.title) + flag(doc) + '</div>' +
                  '<div class="doc-mt">' + (doc.type === "pdf" ? "Download (PDF)" : "View") + '</div></div>' +
                  '<i class="ti ' + act + '"></i></a>';
-      }).join("");
-      set(sel, html);
+      }
+      function slug(g){ return (g || "other").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+      var order = [], groups = {};
+      docs.forEach(function (dc) { var c = dc.cat || "Documents"; if (!groups[c]) { groups[c] = []; order.push(c); } groups[c].push(dc); });
+      var tabs = '', panes = '';
+      order.forEach(function (g, idx) {
+        var sl = slug(g), act = idx === 0 ? ' active' : '';
+        tabs += '<button class="folder-tab' + act + '" type="button" data-fld="' + sl + '">' + esc(g) + '<span class="ft-n">' + groups[g].length + '</span></button>';
+        panes += '<div class="folder-pane' + act + '" id="fld-' + sl + '"><div class="doc-list">' + groups[g].map(row).join("") + '</div></div>';
+      });
+      set(sel, '<div class="folder"><div class="folder-tabs" role="tablist">' + tabs + '</div><div class="folder-body">' + panes + '</div></div>');
     },
 
     // ---- committees / board ----
@@ -106,22 +116,21 @@
       var html = groups.map(function (g) {
         var members = (g.members || []).map(function (m) {
           var av = m.photo
-            ? '<div class="profile-av"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div>'
-            : '<div class="profile-av">' + esc(initials(m.name)) + '</div>';
-          var tel = m.phone ? m.phone.replace(/[^0-9+]/g, "") : "";
-          return '<div class="profile-card">' + av +
-                   '<div class="profile-name">' + esc(m.name) + flag(m) + '</div>' +
-                   '<div class="profile-role">' + esc(m.role || "") + '</div>' +
-                   '<div class="profile-contact">' +
-                     (m.phone ? '<a href="tel:' + esc(tel) + '"><i class="ti ti-phone"></i> ' + esc(m.phone) + '</a>' : '') +
-                     (m.email ? '<a href="mailto:' + esc(m.email) + '"><i class="ti ti-mail"></i> ' + esc(m.email) + '</a>' : '') +
-                   '</div>' +
+            ? '<div class="board-av"><img src="' + esc(m.photo) + '" alt="' + esc(m.name) + '" loading="lazy"></div>'
+            : '<div class="board-av board-av-init">' + esc(initials(m.name)) + '</div>';
+          var c2 = '';
+          if (m.phone) c2 += '<a class="bc-link" href="tel:' + esc(m.phone.replace(/\s+/g, '')) + '"><span class="bc-ic"><i class="ti ti-phone"></i></span><span class="bc-val">' + esc(m.phone) + '</span></a>';
+          if (m.email) c2 += '<a class="bc-link" href="mailto:' + esc(m.email) + '"><span class="bc-ic"><i class="ti ti-mail"></i></span><span class="bc-val">' + esc(m.email) + '</span></a>';
+          return '<div class="board-card">' + av +
+                   '<div class="board-name">' + esc(m.name) + flag(m) + '</div>' +
+                   '<div class="board-role">' + esc(m.role || "") + '</div>' +
+                   (c2 ? '<div class="board-contact">' + c2 + '</div>' : '') +
                  '</div>';
         }).join("");
         var gid = (g.name || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
         return '<div class="section-block" id="' + gid + '"><div class="block-hed">' + esc(g.name) + flag(g) + '</div>' +
                (g.note ? '<div class="block-sub">' + esc(g.note) + '</div>' : '') +
-               (members ? '<div class="profile-grid">' + members + '</div>' : '') +
+               (members ? '<div class="board-grid">' + members + '</div>' : '') +
                '</div>';
       }).join("");
       set(sel, html);
@@ -134,6 +143,18 @@
                  '<div class="tile-ic"><i class="ti ti-news"></i></div>' +
                  '<div><div class="tile-tt">' + esc(n.title) + flag(n) + '</div>' +
                  '<div class="tile-tx">' + esc(n.cat) + ' &middot; ' + esc(n.date) + '<br>' + esc(n.excerpt) + '</div></div></a>';
+      }).join("");
+      set(sel, html);
+    },
+
+    // ---- news archive (compact list of older items) ----
+    newsArchive: function (sel) {
+      var html = (D().newsArchive || []).map(function (n) {
+        return '<a class="doc-item" href="' + esc(n.url) + '"' + (n.url !== "#" ? ' target="_blank" rel="noopener"' : '') + '>' +
+                 '<div class="doc-ic"><i class="ti ti-news"></i></div>' +
+                 '<div><div class="doc-tt">' + esc(n.title) + flag(n) + '</div>' +
+                 '<div class="doc-mt">' + esc(n.cat) + ' &middot; ' + esc(n.date) + '</div></div>' +
+                 '<i class="ti ti-external-link" style="margin-left:auto;color:var(--muted)"></i></a>';
       }).join("");
       set(sel, html);
     },
@@ -274,6 +295,28 @@
       (s.links || []).forEach(function (l){ tile(l.label, l.url, "ti-link", l); });
       (s.repTeams || []).forEach(function (r){ tile(r.label, r.url, "ti-shield-half-filled", r); });
       set(sel, tiles.join(""));
+    },
+    events: function (sel) {
+      var evs = D().events || [];
+      var html = evs.map(function (e) {
+        var img = e.image
+          ? "background-image:url('" + esc(e.image) + "')"
+          : "background:linear-gradient(135deg,var(--navy),var(--navy3))";
+        return '<a class="ev-card" href="/event.html?event=' + encodeURIComponent(e.slug) + '">' +
+            '<div class="ev-img" style="' + img + '"><div class="ev-img-ov"></div>' +
+              '<div class="ev-meta">' +
+                '<span class="ev-date"><b>' + esc(e.day) + '</b>' + esc(e.month) + '</span>' +
+                '<span class="ev-cat">' + esc(e.category) + '</span>' +
+              '</div>' +
+            '</div>' +
+            '<div class="ev-body">' +
+              '<div class="ev-title">' + esc(e.title) + flag(e) + '</div>' +
+              '<div class="ev-venue"><i class="ti ti-map-pin"></i> ' + esc(e.venue) + '</div>' +
+              (e.time ? '<div class="ev-venue"><i class="ti ti-clock"></i> ' + esc(e.time) + '</div>' : '') +
+            '</div>' +
+          '</a>';
+      }).join("");
+      set(sel, '<div class="ev-grid">' + (html || '<p class="muted-note">No upcoming events listed.</p>') + '</div>');
     }
   };
 

@@ -5,6 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>News &amp; Articles — RDCA</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
@@ -39,6 +41,12 @@
     <div class="tile-grid" id="news-mount"></div>
   </div>
 
+  <div class="section-block">
+    <div class="block-hed">Archive</div>
+    <div class="block-sub">Earlier articles and announcements from previous seasons.</div>
+    <div class="doc-list" id="news-archive-mount"></div>
+  </div>
+
 </div>
 
 <div data-rdca="sponsor-carousel"></div>
@@ -46,6 +54,6 @@
 
 <script src="/site-data.js"></script>
 <script src="/rdca-render.js"></script>
-<script>RDCA.render.news("#news-mount");</script>
+<script>RDCA.render.news("#news-mount");RDCA.render.newsArchive("#news-archive-mount");</script>
 </body>
 </html>

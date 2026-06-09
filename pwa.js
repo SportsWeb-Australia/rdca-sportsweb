@@ -140,6 +140,9 @@
 (function () {
   "use strict";
   var SAMPLES = [
+    { title: "AGM \u2014 28 January", body: "The RDCA AGM is set for 28 January. All member clubs are invited.", url: "/notices.html#agm" },
+    { title: "Ground closures in effect", body: "Some grounds are closed \u2014 check conditions before you travel.", url: "/notices.html#ground-closures" },
+    { title: "Awards Night nominations open", body: "Nominations for the RDCA Awards Night are open until 31 January.", url: "/notices.html#awards" },
     { title: "Round 15 fixtures are live", body: "See who your club plays this Saturday across all grades.", url: "/competition.html" },
     { title: "Wet weather update", body: "Some grounds may be affected today \u2014 tap for the latest ground status.", url: "/competition.html" },
     { title: "Live now on FrogBox", body: "Ringwood CC v Croydon CC is streaming live. Tap to watch.", url: "/video.html" },
