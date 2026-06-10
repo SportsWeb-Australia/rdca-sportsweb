@@ -41,10 +41,27 @@
 
 <div class="page-wrap">
 
-  <div class="section-block">
-    <div class="block-hed">Fixtures, Results &amp; Ladders</div>
-    <div class="block-sub">Choose your competition. Each opens the official PlayHQ page for that grade.</div>
-    <div class="playhq-grid" id="playhq-mount"></div>
+  <div class="hub-note">
+    <i class="ti ti-info-circle"></i>
+    <span>Live fixtures, results and ladders are split into the three boards below. Once the PlayHQ data feed is connected each board will render live tables inline; until then every card opens the official PlayHQ page for that grade (and, where available, the direct team page).</span>
+  </div>
+
+  <div class="section-block" id="fixtures">
+    <div class="block-hed"><i class="ti ti-calendar-event hub-hed-ic"></i> Fixtures</div>
+    <div class="block-sub">Upcoming matches by round. Choose your competition — each opens the official PlayHQ fixtures for that grade.</div>
+    <div class="playhq-grid" id="mount-fixtures"></div>
+  </div>
+
+  <div class="section-block" id="results">
+    <div class="block-hed"><i class="ti ti-chart-bar hub-hed-ic"></i> Results</div>
+    <div class="block-sub">Completed match results and scorecards, by grade, live on PlayHQ.</div>
+    <div class="playhq-grid" id="mount-results"></div>
+  </div>
+
+  <div class="section-block" id="ladders">
+    <div class="block-hed"><i class="ti ti-list-numbers hub-hed-ic"></i> Ladders</div>
+    <div class="block-sub">Standings, points and percentage for each grade, live on PlayHQ.</div>
+    <div class="playhq-grid" id="mount-ladders"></div>
   </div>
 
   <div class="section-block">
@@ -66,6 +83,10 @@
 <script src="/playhq.js"></script>
 <script src="/site-data.js"></script>
 <script src="/rdca-render.js"></script>
-<script>RDCA.render.playhqCompetitions("#playhq-mount");</script>
+<script>
+  RDCA.render.playhqBoard("#mount-fixtures", "fixtures");
+  RDCA.render.playhqBoard("#mount-results",  "results");
+  RDCA.render.playhqBoard("#mount-ladders",  "ladders");
+</script>
 </body>
 </html>

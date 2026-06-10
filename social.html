@@ -40,8 +40,8 @@
 <div class="page-wrap wide">
 
   <div class="section-block">
-    <div class="callout callout-blue">
-      <i class="ti ti-brand-facebook"></i>
+    <div class="callout callout-navy">
+      <i class="ti ti-rss"></i>
       <div id="social-note"></div>
     </div>
   </div>
@@ -65,25 +65,54 @@
   if (note) note.innerHTML = (d.socialNote || "");
 
   var orgs = d.social || [];
+  function handleFrom(url, host){ try { return String(url).split(host)[1].replace(/[\/?#].*$/,"").replace(/\/$/,""); } catch(e){ return ""; } }
   var html = orgs.map(function(o){
     var links = (o.links || []).map(function(l){
       return '<a class="soc-btn" href="' + esc(l.u) + '" target="_blank" rel="noopener" title="' + esc(l.t) +
              '" aria-label="' + esc(o.name) + ' on ' + esc(l.t) + '"><i class="ti ti-' + esc(l.i) + '"></i></a>';
     }).join("");
-    var embed = o.fb
-      ? '<div class="soc-embed"><iframe class="fb-embed" title="' + esc(o.name) + ' on Facebook" ' +
+
+    // Facebook live timeline (Page Plugin)
+    var fbCol = o.fb
+      ? '<div class="soc-feed-col"><div class="soc-feed-head"><i class="ti ti-brand-facebook"></i> Facebook</div>' +
+          '<iframe class="fb-embed" title="' + esc(o.name) + ' on Facebook" ' +
           'src="https://www.facebook.com/plugins/page.php?href=' + encodeURIComponent(o.fb) +
           '&tabs=timeline&width=500&height=640&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" ' +
           'width="500" height="640" style="border:none;overflow:hidden" scrolling="no" frameborder="0" ' +
           'allowfullscreen="true" loading="lazy" ' +
           'allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe></div>'
       : '';
+
+    // Instagram — follow panel (a true in-page IG feed needs a Meta Graph token; this links straight to the live profile)
+    var ig = (o.links || []).filter(function(l){ return l.i === "brand-instagram"; })[0];
+    var igCol = ig
+      ? '<div class="soc-feed-col"><div class="soc-feed-head"><i class="ti ti-brand-instagram"></i> Instagram</div>' +
+          '<a class="ig-card" href="' + esc(ig.u) + '" target="_blank" rel="noopener" aria-label="' + esc(o.name) + ' on Instagram">' +
+            '<div class="ig-card-ic"><i class="ti ti-brand-instagram"></i></div>' +
+            '<div class="ig-card-handle">@' + esc(handleFrom(ig.u, "instagram.com/")) + '</div>' +
+            '<div class="ig-card-sub">Latest photos &amp; reels from ' + esc(o.name) + '</div>' +
+            '<span class="ig-card-btn">View Instagram <i class="ti ti-external-link"></i></span>' +
+          '</a></div>'
+      : '';
+
+    // TikTok — only if the organisation has one
+    var tkCol = o.tiktok
+      ? '<div class="soc-feed-col"><div class="soc-feed-head"><i class="ti ti-brand-tiktok"></i> TikTok</div>' +
+          '<a class="tk-card" href="' + esc(o.tiktok) + '" target="_blank" rel="noopener" aria-label="' + esc(o.name) + ' on TikTok">' +
+            '<div class="tk-card-ic"><i class="ti ti-brand-tiktok"></i></div>' +
+            '<div class="ig-card-handle">@' + esc(handleFrom(o.tiktok, "tiktok.com/@")) + '</div>' +
+            '<div class="ig-card-sub">Watch the latest clips</div>' +
+            '<span class="tk-card-btn">View TikTok <i class="ti ti-external-link"></i></span>' +
+          '</a></div>'
+      : '';
+
+    var feeds = (fbCol || igCol || tkCol) ? '<div class="soc-feeds">' + fbCol + igCol + tkCol + '</div>' : '';
     return '<section class="soc-block">' +
              '<div class="soc-bar">' +
                '<div><div class="soc-name">' + esc(o.name) + '</div>' +
                (o.tag ? '<div class="soc-tag">' + esc(o.tag) + '</div>' : '') + '</div>' +
                (links ? '<div class="soc-links">' + links + '</div>' : '') +
-             '</div>' + embed +
+             '</div>' + feeds +
            '</section>';
   }).join("");
 

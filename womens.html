@@ -43,7 +43,10 @@
   <div class="section-block">
     <div class="block-hed">Fixtures, Results &amp; Ladders</div>
     <div class="block-sub">Live on PlayHQ for this section.</div>
-    <div class="playhq-grid" id="sec-playhq"></div>
+    <div class="sec-pl-wrap" id="sec-pl-wrap">
+      <div class="playhq-grid" id="sec-playhq"></div>
+      <div class="sec-photos" id="sec-photos" aria-hidden="true"></div>
+    </div>
   </div>
 
   <div class="section-block">
@@ -92,6 +95,18 @@
     RDCA.render.sectionLinks(SECTION, "#sec-links");
     RDCA.render.sectionAbout(SECTION, "#sec-about");
     RDCA.render.sectionConduct(SECTION, "#sec-conduct");
+    // section photo collage (desktop) — pulls from the shared photoStrip so a
+    // single swap to real RDCA photos updates every section page at once.
+    (function(){
+      var box = document.getElementById("sec-photos");
+      var wrap = document.getElementById("sec-pl-wrap");
+      var ph = ((window.RDCA_DATA && window.RDCA_DATA.photoStrip) || []).slice(0,3);
+      if (box && ph.length) {
+        box.innerHTML = ph.map(function(u){ return '<img src="'+u+'" alt="" loading="lazy">'; }).join("");
+        if (wrap) wrap.classList.add("has-photos");
+      }
+    })();
+
   })();
 </script>
 </body>

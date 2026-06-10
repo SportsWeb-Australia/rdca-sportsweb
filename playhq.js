@@ -67,6 +67,43 @@ window.RDCA_PLAYHQ = {
     overrides: { enabled: false, items: [] }
   },
 
+  /* ==========================================================================
+     BOARD VIEWS — the Competition Hub is split into three boards: Fixtures,
+     Results and Ladders. Once CONFIG.api is enabled these boards render LIVE
+     tables inline (pulled from api.playhq.com using seasonId + gradeId). Until
+     then each board links OUT to the official PlayHQ page for the grade — and,
+     where a per-team PlayHQ URL is known, straight to that team's page.
+
+     `viewPaths` lets us deep-link to a specific tab on PlayHQ when the public
+     URL scheme is confirmed for the current season (left empty = link to the
+     competition page, which always works). Per-competition overrides
+     (fixturesUrl / resultsUrl / ladderUrl / teams[]) win over these. */
+  views: [
+    { key: "fixtures", label: "Fixtures", cta: "View Fixtures", icon: "ti-calendar-event",
+      blurb: "Upcoming matches by round for each RDCA grade." },
+    { key: "results",  label: "Results",  cta: "View Results",  icon: "ti-chart-bar",
+      blurb: "Completed match results and scorecards." },
+    { key: "ladders",  label: "Ladders",  cta: "View Ladder",   icon: "ti-list-numbers",
+      blurb: "Live standings, points and percentage for each grade." }
+  ],
+
+  /* Optional deep-link tab segments appended to a competition URL. Confirm the
+     live scheme per season before filling these (or rely on the API instead). */
+  viewPaths: { fixtures: "", results: "", ladders: "" },
+
+  /* Helper: link for a given section + board view. Resolution order:
+     1) per-competition explicit URL (fixturesUrl/resultsUrl/ladderUrl)
+     2) competition URL + viewPaths[view]
+     3) competition URL  4) org page. Always returns a working PlayHQ link. */
+  viewUrl: function (key, view) {
+    var c = this.competitions[key] || {};
+    var explicit = c[view + "Url"];
+    if (explicit) return explicit;
+    var base = c.url || this.orgUrl;
+    var seg = (this.viewPaths && this.viewPaths[view]) || "";
+    return seg ? (base.replace(/\/$/, "") + seg) : base;
+  },
+
   /* Helper: returns the link for a section, falling back to the org page. */
   linkFor: function (key) {
     var c = this.competitions[key];
